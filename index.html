@@ -102,6 +102,11 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
 .tpl-row button[aria-pressed="true"]{border-color:#D71920}
 .tpl-row button:focus-visible{outline:3px solid #D71920}
 .tpl-row img{width:100%;height:100%;object-fit:contain;display:block}
+.ready-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}
+.ready-grid button{all:unset;cursor:pointer;display:block;border:3px solid transparent}
+.ready-grid button[aria-pressed="true"]{border-color:#D71920}
+.ready-grid button:focus-visible{outline:3px solid #D71920}
+.ready-grid canvas{width:100%;height:auto;display:block}
 #meme-canvas{width:100%;height:auto;display:block;background:#E8F3FB}
 
 #lightbox{background:rgba(0,0,0,.85);cursor:zoom-out}
@@ -183,7 +188,7 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
           <span style="position: absolute; left: 50%; top: 21%; transform: translate(-50%, -50%); width: clamp(22px, 2.9vw, 35px); height: clamp(22px, 2.9vw, 35px); border-radius: 50%; background: #FFF4DC; border: 2px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-family: Anton, Impact, sans-serif; font-size: clamp(11px, 1.3vw, 16px); color: #1A1A1A">29</span>
         </div>
       </div>
-  </div><p style="position: relative; display: inline-block; margin: 8px auto 0; max-width: 640px; font-family: Special Elite, Courier New, monospace; font-size: 20px; line-height: 1.55; text-transform: uppercase; letter-spacing: 0.5px; background: #FFFFFF; border: 2px solid #111111; padding: 12px 18px; box-shadow: 4px 4px 0 #0033A0"><b>CORREDOR, NERD DE LOS DATOS Y FANÁTICO DE LOS DEPORTES. POR SU CUMPLEAÑOS DÉJALE A JOSE MARIA UN MENSAJE, UNA FOTO, UN MEME O UN GIF EN SU MURO.</b></p>
+  </div><div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 8px"><p style="position: relative; display: inline-block; max-width: 640px; font-family: Special Elite, Courier New, monospace; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.5px; border: 2px solid #111111; padding: 12px 18px; margin: 0; font-size: 22px; background: #FFFFFF; box-shadow: 4px 4px 0 #0033A0; transform: rotate(-1deg)"><b>Corredor, nerd de los datos y fanático de los deportes.</b></p><p style="position: relative; display: inline-block; max-width: 640px; font-family: Special Elite, Courier New, monospace; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.5px; border: 2px solid #111111; padding: 12px 18px; margin: 0; font-size: 17px; background: #FFE14D; box-shadow: 4px 4px 0 #D71920; transform: rotate(0.8deg)"><b>Por su cumpleaños déjale a Jose Maria un mensaje en la pared:</b></p></div>
     <div class="hero-stickers" aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: -40px; height: 0; z-index: 3; pointer-events: none">
       <img src="images/sticker_dog.png" alt="" style="position: absolute; bottom: 0; left: 3%; width: 150px; height: auto; transform: rotate(-7deg)">
       <img src="images/sticker_nerd.png" alt="" style="position: absolute; bottom: 20px; right: 3%; width: 180px; height: auto; transform: rotate(6deg)">
@@ -225,7 +230,7 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
           <button type="button" id="btn-photos" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Subir fotos</button>
           <button type="button" id="btn-meme" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Subir meme</button>
           <button type="button" id="btn-gif" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Agregar GIF</button>
-          <button type="button" id="btn-maker" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Crear meme</button>
+          <button type="button" id="btn-maker" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Memes listos</button>
           <button type="button" id="btn-send" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; margin-left: auto; background: #D71920; color: #FFFFFF; border-color: #FF8A8E #5A080B #5A080B #FF8A8E">¡Gol!</button>
         </div>
         <div id="attach-preview" class="attach-preview" hidden></div>
@@ -262,15 +267,11 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
 <span style="flex: 1; background: #0033A0"></span><span style="flex: 1; background: #0033A0"></span><span style="flex: 1; background: #0033A0"></span><span style="flex: 1; background: #0033A0"></span><span style="flex: 1; background: #0033A0"></span><span style="flex: 1; background: #0033A0"></span><span style="flex: 1; background: #0033A0"></span><span style="flex: 1; background: #0033A0"></span><span style="flex: 1; background: #0033A0"></span><span style="flex: 0.7; background: #0033A0"></span><span style="flex: 0.3"></span></div>
 </div></article><article style="background: #C0C0C0; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; padding: 3px; box-shadow: 4px 4px 0 rgba(0,0,0,0.25); transform: rotate(0.6deg)"><div style="background: linear-gradient(90deg, #0033A0, #3E73D6); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center"><span>km_corridos.xls</span><span aria-hidden="true" style="display: flex; gap: 2px"><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; color: #111111; font-size: 11px; line-height: 12px; text-align: center">x</span></span></div><div style="background: #FFFFFF; padding: 14px">
 <div style="font-family: Anton, Impact, sans-serif; font-size: 26px">KM CORRIDOS</div>
-<svg viewBox="0 0 240 140" width="100%" role="img" aria-label="Gráfico de barras: los kilómetros corridos suben cada año de los 26 a los 29"><line x1="10" y1="118" x2="230" y2="118" stroke="#111111" stroke-width="2"></line><rect x="24" y="78" width="36" height="40" fill="#0033A0"></rect><text x="42" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#111111">26</text><rect x="76" y="56" width="36" height="62" fill="#0033A0"></rect><text x="94" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#111111">27</text><rect x="128" y="34" width="36" height="84" fill="#0033A0"></rect><text x="146" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#111111">28</text><rect x="180" y="10" width="36" height="108" fill="#D71920"></rect><text x="198" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#111111">29</text><text x="218" y="16" text-anchor="end" font-family="VT323, monospace" font-size="16" fill="#D71920">¡RÉCORD!</text></svg>
-<div style="font-size: 12px">Tendencia: imparable. Las rodillas no opinan lo mismo.</div></div></article><article style="background: #C0C0C0; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; padding: 3px; box-shadow: 4px 4px 0 rgba(0,0,0,0.25); transform: rotate(-0.4deg)"><div style="background: linear-gradient(90deg, #0033A0, #3E73D6); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center"><span>sus_maratones.csv</span><span aria-hidden="true" style="display: flex; gap: 2px"><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; color: #111111; font-size: 11px; line-height: 12px; text-align: center">x</span></span></div><div style="background: #FFFFFF; padding: 14px; display: flex; flex-direction: column; gap: 6px">
+<svg viewBox="0 -26 240 166" width="100%" role="img" aria-label="Gráfico de barras: los kilómetros corridos suben cada año de los 26 a los 29"><line x1="10" y1="118" x2="230" y2="118" stroke="#111111" stroke-width="2"></line><rect x="24" y="78" width="36" height="40" fill="#0033A0"></rect><text x="42" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#111111">26</text><rect x="76" y="56" width="36" height="62" fill="#0033A0"></rect><text x="94" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#111111">27</text><rect x="128" y="34" width="36" height="84" fill="#0033A0"></rect><text x="146" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#111111">28</text><rect x="180" y="10" width="36" height="108" fill="#D71920"></rect><text x="198" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#111111">29</text><text x="196" y="-8" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="16" letter-spacing="1" fill="#D71920">¡RÉCORD!</text></svg>
+<div style="font-size: 12px">Tendencia: imparable. Las rodillas no opinan lo mismo.</div></div></article><article style="background: #C0C0C0; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; padding: 3px; box-shadow: 4px 4px 0 rgba(0,0,0,0.25); transform: rotate(-0.4deg)"><div style="background: linear-gradient(90deg, #0033A0, #3E73D6); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center"><span>sus_maratones.csv</span><span aria-hidden="true" style="display: flex; gap: 2px"><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; color: #111111; font-size: 11px; line-height: 12px; text-align: center">x</span></span></div><div style="background: #FFFFFF; padding: 14px; display: flex; flex-direction: column; gap: 12px">
 <div style="font-family: Anton, Impact, sans-serif; font-size: 26px">SUS MARATONES</div>
-<div style="display: grid; grid-template-columns: 92px 1fr; gap: 8px; align-items: center; font-size: 13px"><span style="font-weight: 700">Buenos Aires</span><span style="display: flex; align-items: center; gap: 6px"><span style="height: 18px; width: 93%; background: #D71920"></span></span></div>
-<div style="margin: -4px 0 4px 100px; font-family: VT323, monospace; font-size: 20px">3:05:46 <span style="font-family: VT323, monospace; font-size: 16px; color: #D71920">¡RÉCORD!</span></div>
-<div style="display: grid; grid-template-columns: 92px 1fr; gap: 8px; align-items: center; font-size: 13px"><span style="font-weight: 700">San Diego</span><span style="display: flex; align-items: center; gap: 6px"><span style="height: 18px; width: 97%; background: #0033A0"></span></span></div>
-<div style="margin: -4px 0 4px 100px; font-family: VT323, monospace; font-size: 20px">3:14:39</div>
-<div style="display: grid; grid-template-columns: 92px 1fr; gap: 8px; align-items: center; font-size: 13px"><span style="font-weight: 700">Praga</span><span style="font-family: VT323, monospace; font-size: 20px; color: #555555">tiempo en camino…</span></div>
-<div style="font-size: 12px">Menos es más: barra más corta, maratón más rápido.</div></div></article><article style="background: #C0C0C0; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; padding: 3px; box-shadow: 4px 4px 0 rgba(0,0,0,0.25); transform: rotate(-0.5deg)"><div style="background: linear-gradient(90deg, #0033A0, #3E73D6); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center"><span>grafico_tacos.bmp</span><span aria-hidden="true" style="display: flex; gap: 2px"><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; color: #111111; font-size: 11px; line-height: 12px; text-align: center">x</span></span></div><div style="background: #FFFFFF; padding: 14px">
+<div style="display: flex; align-items: center; gap: 12px"><svg viewBox="0 0 40 48" width="34" height="41" aria-hidden="true"><path d="M10 0 H18 L24 16 H16 Z" fill="#D71920"/><path d="M30 0 H22 L16 16 H24 Z" fill="#0033A0"/><circle cx="20" cy="31" r="15" fill="#F3CF55" stroke="#A9790E" stroke-width="2.5"/><text x="20" y="35.5" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="11" fill="#6E4E06">42K</text></svg><span style="font-family: Anton, Impact, sans-serif; font-size: 26px; line-height: 1; color: #111111">PRAGA</span></div><div style="display: flex; align-items: center; gap: 12px"><svg viewBox="0 0 40 48" width="34" height="41" aria-hidden="true"><path d="M10 0 H18 L24 16 H16 Z" fill="#D71920"/><path d="M30 0 H22 L16 16 H24 Z" fill="#0033A0"/><circle cx="20" cy="31" r="15" fill="#F3CF55" stroke="#A9790E" stroke-width="2.5"/><text x="20" y="35.5" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="11" fill="#6E4E06">42K</text></svg><span style="font-family: Anton, Impact, sans-serif; font-size: 26px; line-height: 1; color: #111111">BUENOS AIRES</span></div><div style="display: flex; align-items: center; gap: 12px"><svg viewBox="0 0 40 48" width="34" height="41" aria-hidden="true"><path d="M10 0 H18 L24 16 H16 Z" fill="#D71920"/><path d="M30 0 H22 L16 16 H24 Z" fill="#0033A0"/><circle cx="20" cy="31" r="15" fill="#F3CF55" stroke="#A9790E" stroke-width="2.5"/><text x="20" y="35.5" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="11" fill="#6E4E06">42K</text></svg><span style="font-family: Anton, Impact, sans-serif; font-size: 26px; line-height: 1; color: #111111">SAN DIEGO</span></div>
+<div style="font-family: VT323, monospace; font-size: 20px; color: #0033A0">3 maratones · 126,6 km · 0 excusas</div></div></article><article style="background: #C0C0C0; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; padding: 3px; box-shadow: 4px 4px 0 rgba(0,0,0,0.25); transform: rotate(-0.5deg)"><div style="background: linear-gradient(90deg, #0033A0, #3E73D6); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center"><span>grafico_tacos.bmp</span><span aria-hidden="true" style="display: flex; gap: 2px"><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; color: #111111; font-size: 11px; line-height: 12px; text-align: center">x</span></span></div><div style="background: #FFFFFF; padding: 14px">
 <div style="font-family: Anton, Impact, sans-serif; font-size: 22px">KM CORRIDOS <br>VS. <br>BAGELS EN NYC</div>
 <svg viewBox="0 0 240 130" width="100%" role="img" aria-label="Gráfico de barras: los tacos le ganan a los kilómetros"><line x1="10" y1="110" x2="230" y2="110" stroke="#111111" stroke-width="2"></line><rect x="40" y="50" width="60" height="60" fill="#0033A0"></rect><rect x="140" y="8" width="60" height="102" fill="#D71920"></rect><text x="70" y="126" text-anchor="middle" font-size="12" font-weight="700" fill="#111111">KM</text><text x="170" y="126" text-anchor="middle" font-size="12" font-weight="700" fill="#111111">BAGELS</text></svg>
 <div style="font-size: 12px">Proyección para el fin de semana del cumple.</div></div></article><div style="position: relative; background: #FFE14D; color: #111111; padding: 22px 18px 18px; transform: rotate(1.5deg); box-shadow: 4px 6px 0 rgba(0,0,0,0.25)">
@@ -285,7 +286,7 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
     <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center">
       <span style="display: inline-flex; align-items: center; justify-content: center; width: 88px; height: 31px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; font-family: VT323, monospace; font-size: 15px; line-height: 1; text-align: center">MEJOR VISTO EN NETSCAPE</span><span style="display: inline-flex; align-items: center; justify-content: center; width: 88px; height: 31px; background: #0033A0; color: #FFFFFF; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; font-family: VT323, monospace; font-size: 15px; line-height: 1; text-align: center">HECHO CON DATOS</span><span style="display: inline-flex; align-items: center; justify-content: center; width: 88px; height: 31px; background: #D71920; color: #FFFFFF; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; font-family: VT323, monospace; font-size: 15px; line-height: 1; text-align: center">¡VAMOS NACIONAL!</span><span style="display: inline-flex; align-items: center; justify-content: center; width: 88px; height: 31px; background: #000000; color: #FFE14D; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; font-family: VT323, monospace; font-size: 15px; line-height: 1; text-align: center">THE WOMBATS FAN</span>
     </div>
-    <div style="font-family: VT323, monospace; font-size: 20px">© 1997–2026 Club de Fans de Jose Maria · Optimizado para 800×600</div>
+    <div style="font-family: VT323, monospace; font-size: clamp(26px, 4vw, 36px); line-height: 1.2">© 1997–2026 Club de Fans de Jose Maria · Optimizado para 800×600</div>
   </footer>
   <div aria-hidden="true" style="position: relative; z-index: 1; height: 14px; background: repeating-linear-gradient(90deg, #D71920 0 60px, #FFFFFF 60px 80px, #0033A0 80px 140px, #FFFFFF 140px 160px)"></div>
 </div>
@@ -296,7 +297,7 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
     <form id="gate-form" class="win-body" style="gap: 12px">
       <img class="gate-face" src="images/sticker_jose.png" alt="">
       <h1 id="gate-title" class="gate-title">¡VEINTINUEVE!</h1>
-      <p style="margin: 0; text-align: center; font-family: Special Elite, Courier New, monospace; font-size: 18px; line-height: 1.5">Este muro es solo para la gente de Jose Maria. Escribe la contraseña que te mandaron con la invitación.</p>
+      <p style="margin: 0; text-align: center; font-family: Special Elite, Courier New, monospace; font-size: 18px; line-height: 1.5">¡Déjale un mensaje de cumpleaños a Jose!</p>
       <label for="gate-pass" style="font-weight: 700; font-size: 13px">Contraseña:</label>
       <input id="gate-pass" class="field95" type="password" autocomplete="current-password" required>
       <button class="btn95 red" type="submit" id="gate-btn">Entrar al muro</button>
@@ -324,8 +325,12 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
 <!-- Creador de memes -->
 <div id="maker-modal" class="overlay" role="dialog" aria-modal="true" aria-labelledby="maker-title" hidden>
   <div class="win">
-    <div class="win-title"><span id="maker-title">creador_de_memes.exe</span><button type="button" class="x-btn" data-close aria-label="Cerrar">x</button></div>
+    <div class="win-title"><span id="maker-title">memes_de_jose.exe</span><button type="button" class="x-btn" data-close aria-label="Cerrar">x</button></div>
     <div class="win-body">
+      <div style="font-family: Anton, Impact, sans-serif; font-size: 22px">MEMES LISTOS</div>
+      <div style="font-size: 13px; margin-top: -6px">Toca uno para usarlo tal cual o cámbiale el texto abajo.</div>
+      <div id="ready-grid" class="ready-grid"></div>
+      <div style="font-family: Anton, Impact, sans-serif; font-size: 22px; margin-top: 6px">O CREA EL TUYO</div>
       <div style="font-weight: 700; font-size: 13px">1. Elige la imagen</div>
       <div id="tpl-row" class="tpl-row"></div>
       <canvas id="meme-canvas" width="800" height="800" aria-label="Vista previa del meme"></canvas>
@@ -520,17 +525,37 @@ $('attach-preview').addEventListener('click', e=>{
 });
 function clearAttach(){ attach.items.forEach(it=>it.blob&&URL.revokeObjectURL(it.url)); attach={kind:'text',items:[]}; renderAttach(); }
 
+function isHeic(f){ return /hei[cf]/i.test(f.type) || /\.hei[cf]$/i.test(f.name||''); }
+let heicLib=null;
+function loadHeicLib(){
+  if(heicLib) return heicLib;
+  heicLib=new Promise((res,rej)=>{ const sc=document.createElement('script'); sc.src='https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js'; sc.onload=()=>res(window.heic2any); sc.onerror=()=>{ heicLib=null; rej(new Error('heic2any')); }; document.head.appendChild(sc); });
+  return heicLib;
+}
+function decode(blob){
+  return new Promise((res,rej)=>{ const i=new Image(); const u=URL.createObjectURL(blob); i.onload=()=>res({img:i,u}); i.onerror=()=>{ URL.revokeObjectURL(u); rej(new Error('decode')); }; i.src=u; });
+}
 async function shrink(file, max=1600){
   if(file.type==='image/gif') return file;
-  const img=await new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=rej; i.src=URL.createObjectURL(file); });
+  let src=file, got=null;
+  try{ got=await decode(src); }
+  catch(e){
+    if(!isHeic(file)) throw e;
+    const h=await loadHeicLib();
+    let out=await h({blob:file, toType:'image/jpeg', quality:0.9}); if(Array.isArray(out)) out=out[0];
+    src=out; got=await decode(src);
+  }
+  const {img,u}=got;
   const sc=Math.min(1, max/Math.max(img.naturalWidth,img.naturalHeight));
   const c=document.createElement('canvas'); c.width=Math.round(img.naturalWidth*sc); c.height=Math.round(img.naturalHeight*sc);
   const x=c.getContext('2d'); x.fillStyle='#FFFFFF'; x.fillRect(0,0,c.width,c.height); x.drawImage(img,0,0,c.width,c.height);
-  URL.revokeObjectURL(img.src);
+  URL.revokeObjectURL(u);
   return await new Promise(r=>c.toBlob(r,'image/jpeg',0.85));
 }
-function okFile(f){ if(!f.type.startsWith('image/')){ setStatus('Ese archivo no es una imagen. Elige una foto, meme o GIF.', true); return false; }
-  if(f.size>10*1024*1024){ setStatus('Esa imagen pesa más de 10 MB. Elige una más liviana.', true); return false; } return true; }
+let processing=0;
+function busy(on){ processing+=on?1:-1; $('btn-send').disabled=processing>0; }
+function okFile(f){ if(!(f.type.startsWith('image/') || isHeic(f))){ setStatus('Ese archivo no es una imagen. Elige una foto, meme o GIF.', true); return false; }
+  if(f.size>20*1024*1024){ setStatus('Esa imagen pesa más de 20 MB. Elige una más liviana.', true); return false; } return true; }
 
 $('btn-photos').addEventListener('click', ()=>$('file-photos').click());
 $('btn-meme').addEventListener('click', ()=>$('file-meme').click());
@@ -539,14 +564,26 @@ $('file-photos').addEventListener('change', async e=>{
   if(!files.length) return;
   if(attach.kind!=='photo') clearAttach();
   attach.kind='photo';
-  setStatus('Preparando fotos…');
-  for(const f of files.slice(0, 6-attach.items.length)){ const b=await shrink(f); attach.items.push({blob:b, url:URL.createObjectURL(b), type:b.type}); }
-  if(files.length+attach.items.length>6) setStatus('Máximo 6 fotos por mensaje.'); else setStatus('');
+  const room=6-attach.items.length;
+  setStatus(files.some(isHeic)?'Convirtiendo fotos del iPhone…':'Preparando fotos…'); busy(true);
+  let failed=0;
+  for(const f of files.slice(0, room)){
+    try{ const b=await shrink(f); attach.items.push({blob:b, url:URL.createObjectURL(b), type:b.type}); renderAttach(); }
+    catch(err){ console.error(err); failed++; }
+  }
+  busy(false);
+  if(!attach.items.length) attach.kind='text';
+  if(failed) setStatus(failed===1?'No se pudo abrir una de las fotos. Prueba con otra o guárdala como JPG.':'No se pudieron abrir '+failed+' fotos. Prueba con otras o guárdalas como JPG.', true);
+  else if(files.length>room) setStatus('Máximo 6 fotos por mensaje.');
+  else setStatus('Fotos listas: '+attach.items.length+'. Escribe tu nombre y dale a ¡Gol!');
   renderAttach();
 });
 $('file-meme').addEventListener('change', async e=>{
   const f=e.target.files[0]; e.target.value=''; if(!f||!okFile(f)) return;
-  clearAttach(); const b=await shrink(f); attach={kind:f.type==='image/gif'?'gif':'meme', items:[{blob:b,url:URL.createObjectURL(b),type:b.type}]}; renderAttach(); setStatus('');
+  clearAttach(); setStatus('Preparando imagen…'); busy(true);
+  try{ const b=await shrink(f); attach={kind:f.type==='image/gif'?'gif':'meme', items:[{blob:b,url:URL.createObjectURL(b),type:b.type}]}; renderAttach(); setStatus('Imagen lista. Escribe tu nombre y dale a ¡Gol!'); }
+  catch(err){ console.error(err); setStatus('No se pudo abrir esa imagen. Prueba con otra o guárdala como JPG.', true); }
+  busy(false);
 });
 
 /* ---------- modales ---------- */
@@ -602,19 +639,54 @@ function memeText(ctx, text, y, fromTop){
   const lh=size*1.08; const start = fromTop ? y+size : y-(ls.length-1)*lh;
   ls.forEach((l,i)=>{ ctx.strokeText(l,W/2,start+i*lh); ctx.fillText(l,W/2,start+i*lh); });
 }
-function drawMeme(){
-  const c=$('meme-canvas'), x=c.getContext('2d');
+function paint(c, img, top, bottom){
+  const x=c.getContext('2d'); const s=c.width/800; x.setTransform(s,0,0,s,0,0);
   x.fillStyle='#BFE0F5'; x.fillRect(0,0,800,800);
-  if(tplImg){
-    const r=tplImg.naturalWidth/tplImg.naturalHeight; const transparent=/hat_|sticker_/.test(tplImg.src);
+  if(img){
+    const r=img.naturalWidth/img.naturalHeight; const transparent=/hat_|sticker_/.test(img.src);
     let w,h; if(transparent){ h=620; w=h*r; if(w>700){ w=700; h=w/r; } } else { if(r>1){ h=800; w=h*r; } else { w=800; h=w/r; } }
-    x.drawImage(tplImg,(800-w)/2, transparent?(800-h)/2+20:(800-h)/2, w, h);
+    x.drawImage(img,(800-w)/2, transparent?(800-h)/2+20:(800-h)/2, w, h);
   }
-  memeText(x,$('meme-top').value,14,true);
-  memeText(x,$('meme-bottom').value,770,false);
+  memeText(x,top||'',14,true);
+  memeText(x,bottom||'',770,false);
 }
+function drawMeme(){ paint($('meme-canvas'), tplImg, $('meme-top').value, $('meme-bottom').value); }
+const READY=[
+  ['hat_original.png','Yo a los 28','Yo a los 29: mismo crack'],
+  ['hat_rojo.png','Cuando El Nacional gana','y además es tu cumple'],
+  ['hat_azul.png','Nadie:','Jose: ¿ya vieron mi dashboard?'],
+  ['sticker_dog.png','Papá de 4 goldens','Pelos en la ropa: incontables'],
+  ['hat_amarillo.png','3:05:46 en Buenos Aires','¿y llegar puntual a la fiesta?'],
+  ['hat_rosa.png','Ana: ¿nos vamos?','Jose: un partido más'],
+  ['hat_blanco.png','29 años de datos','cero outliers'],
+  ['hat_original.png','Steelers, Real Madrid y El Nacional','fines de semana libres: 0'],
+  ['twenty_nine.png','','Cuando te preguntan la edad'],
+  ['hat_rojo.png','¿Maratón mañana?','No. Brunch.']
+];
+const imgCache={};
+function getImg(src){ if(!imgCache[src]) imgCache[src]=new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=rej; i.src=src; }); return imgCache[src]; }
+let readyDone=false;
+async function renderReady(){
+  if(readyDone) return; readyDone=true;
+  const g=$('ready-grid');
+  g.innerHTML=READY.map((m,i)=>'<button type="button" data-ready="'+i+'" aria-label="Meme: '+esc((m[1]+' '+m[2]).trim())+'"><canvas width="240" height="240"></canvas></button>').join('');
+  for(let i=0;i<READY.length;i++){
+    const cv=g.children[i].querySelector('canvas');
+    try{ const im=await getImg('images/'+READY[i][0]); paint(cv, im, READY[i][1], READY[i][2]); }
+    catch(e){ console.warn('No se encontró images/'+READY[i][0]); paint(cv, null, READY[i][1], READY[i][2]); }
+  }
+}
+$('ready-grid').addEventListener('click', async e=>{
+  const b=e.target.closest('[data-ready]'); if(!b) return;
+  const m=READY[+b.dataset.ready];
+  $('ready-grid').querySelectorAll('[data-ready]').forEach(x=>x.setAttribute('aria-pressed', x===b));
+  $('tpl-row').querySelectorAll('[data-tpl]').forEach(x=>x.setAttribute('aria-pressed', x.dataset.tpl==='images/'+m[0]));
+  try{ tplImg=await getImg('images/'+m[0]); }catch(err){ tplImg=null; }
+  $('meme-top').value=m[1]; $('meme-bottom').value=m[2]; drawMeme();
+  $('maker-use').scrollIntoView({block:'nearest'});
+});
 ['meme-top','meme-bottom'].forEach(id=>$(id).addEventListener('input', drawMeme));
-$('btn-maker').addEventListener('click', async ()=>{ openModal('maker-modal'); try{ await document.fonts.load('86px Anton'); }catch(e){} if(!tplImg) loadTpl('images/'+TEMPLATES[0]); else drawMeme(); });
+$('btn-maker').addEventListener('click', async ()=>{ openModal('maker-modal'); try{ await document.fonts.load('86px Anton'); }catch(e){} renderReady(); if(!tplImg) loadTpl('images/'+TEMPLATES[0]); else drawMeme(); });
 $('maker-use').addEventListener('click', ()=>{
   if(!$('meme-top').value.trim() && !$('meme-bottom').value.trim()){ $('meme-top').focus(); return; }
   try{
