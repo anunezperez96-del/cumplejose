@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=VT323&amp;family=Special+Elite&amp;family=Permanent+Marker&amp;display=swap" rel="stylesheet">
 <style>
-body{margin:0}
+body{margin:0;font-family:Verdana,Tahoma,Geneva,sans-serif}
 a{color:#0033A0}a:hover{color:#D71920}
 :focus-visible{outline:3px solid #D71920;outline-offset:2px}
 button{cursor:pointer}
@@ -92,13 +92,16 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
 .gate-face{display:block;height:180px;margin:0 auto -6px}
 .gate-title{margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:44px;line-height:1;color:#D71920;text-shadow:2px 2px 0 #FFFFFF,4px 4px 0 #0033A0;text-align:center}
 
+.gif-cats{display:flex;flex-wrap:wrap;gap:6px}
+.gif-cats button{font:inherit;font-size:13px;font-weight:700;padding:8px 10px;min-height:40px;background:#FFFFFF;color:#111111;border:2px solid #111111;border-radius:999px}
+.gif-cats button[aria-pressed="true"]{background:#0033A0;color:#FFFFFF;border-color:#0033A0}
 .gif-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px}
 .gif-grid button{all:unset;cursor:pointer;display:block;background:#E8F3FB}
 .gif-grid button:focus-visible{outline:3px solid #D71920}
 .gif-grid img{width:100%;height:110px;object-fit:cover;display:block}
 
 .tpl-row{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
-.tpl-row button{all:unset;cursor:pointer;flex:none;width:64px;height:64px;background:#E8F3FB;border:2px solid transparent}
+.tpl-row button{all:unset;display:block;box-sizing:border-box;cursor:pointer;flex:none;width:64px;height:64px;background:#E8F3FB;border:2px solid transparent}
 .tpl-row button[aria-pressed="true"]{border-color:#D71920}
 .tpl-row button:focus-visible{outline:3px solid #D71920}
 .tpl-row img{width:100%;height:100%;object-fit:contain;display:block}
@@ -188,9 +191,9 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
           <span style="position: absolute; left: 50%; top: 21%; transform: translate(-50%, -50%); width: clamp(22px, 2.9vw, 35px); height: clamp(22px, 2.9vw, 35px); border-radius: 50%; background: #FFF4DC; border: 2px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-family: Anton, Impact, sans-serif; font-size: clamp(11px, 1.3vw, 16px); color: #1A1A1A">29</span>
         </div>
       </div>
-  </div><div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 8px"><p style="position: relative; display: inline-block; max-width: 640px; font-family: Special Elite, Courier New, monospace; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.5px; border: 2px solid #111111; padding: 12px 18px; margin: 0; font-size: 22px; background: #FFFFFF; box-shadow: 4px 4px 0 #0033A0; transform: rotate(-1deg)"><b>Corredor, nerd de los datos y fanático de los deportes.</b></p><p style="position: relative; display: inline-block; max-width: 640px; font-family: Special Elite, Courier New, monospace; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.5px; border: 2px solid #111111; padding: 12px 18px; margin: 0; font-size: 17px; background: #FFE14D; box-shadow: 4px 4px 0 #D71920; transform: rotate(0.8deg)"><b>Por su cumpleaños déjale a Jose Maria un mensaje en la pared:</b></p></div>
+  </div><div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 8px"><p style="position: relative; display: inline-block; max-width: 640px; font-family: Special Elite, Courier New, monospace; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.5px; border: 2px solid #111111; padding: 12px 18px; margin: 0; font-size: 22px; background: #FFFFFF; box-shadow: 4px 4px 0 #0033A0"><b>Corredor, nerd de los datos y fanático de los deportes.</b></p><p style="position: relative; display: inline-block; max-width: 640px; font-family: Special Elite, Courier New, monospace; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.5px; border: 2px solid #111111; padding: 12px 18px; margin: 0; font-size: 17px; background: #FFE14D; box-shadow: 4px 4px 0 #D71920"><b>Por su cumpleaños déjale a Jose Maria un mensaje en la pared:</b></p></div>
     <div class="hero-stickers" aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: -40px; height: 0; z-index: 3; pointer-events: none">
-      <img src="images/sticker_dog.png" alt="" style="position: absolute; bottom: 0; left: 3%; width: 150px; height: auto; transform: rotate(-7deg)">
+      <img src="images/sticker_watch.png" alt="" style="position: absolute; bottom: 0; left: 4%; width: 125px; height: auto; transform: rotate(-8deg)">
       <img src="images/sticker_nerd.png" alt="" style="position: absolute; bottom: 20px; right: 3%; width: 180px; height: auto; transform: rotate(6deg)">
     </div>
   </section>
@@ -208,8 +211,7 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
   <section style="position: relative; z-index: 1; max-width: 760px; margin: 40px auto 0; padding: 0 24px">
     <div class="side-stickers" aria-hidden="true" style="position: absolute; inset: 0; z-index: 0; pointer-events: none">
       <img src="images/sticker_taxi.png" alt="" style="position: absolute; top: -70px; right: 100%; width: 195px; height: auto; transform: rotate(-8deg)">
-      <img src="images/sticker_heart.png" alt="" style="position: absolute; top: 60px; right: 106%; width: 150px; height: auto; transform: rotate(5deg)">
-      <img src="images/sticker_cake.png" alt="" style="position: absolute; top: 185px; right: 104%; width: 135px; height: auto; transform: rotate(-5deg)">
+      <img src="images/sticker_heart.png" alt="" style="position: absolute; top: 215px; right: 104%; width: 155px; height: auto; transform: rotate(5deg)">
       <img src="images/sticker_crest.png" alt="" style="position: absolute; top: -100px; left: 108%; width: 120px; height: auto; transform: rotate(8deg)">
       <img src="images/sticker_medal.png" alt="" style="position: absolute; top: 90px; left: 113%; width: 115px; height: auto; transform: rotate(-7deg)">
       <img src="images/sticker_pc.png" alt="" style="position: absolute; top: 285px; left: 101%; width: 165px; height: auto; transform: rotate(6deg)">
@@ -228,9 +230,9 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
         <textarea id="a-msg" maxlength="2000" placeholder="Feliz cumple, crack..." style="font: inherit; padding: 10px 12px; background: #FFFFFF; border: 2px solid; border-color: #404040 #FFFFFF #FFFFFF #404040; min-height: 90px"></textarea>
         <div style="display: flex; flex-wrap: wrap; gap: 8px">
           <button type="button" id="btn-photos" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Subir fotos</button>
-          <button type="button" id="btn-meme" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Subir meme</button>
-          <button type="button" id="btn-gif" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Agregar GIF</button>
-          <button type="button" id="btn-maker" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Memes listos</button>
+          <button type="button" id="btn-meme" hidden style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Subir meme</button>
+          <button type="button" id="btn-gif" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">GIFs</button>
+          <button type="button" id="btn-maker" hidden style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Memes listos</button>
           <button type="button" id="btn-send" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; margin-left: auto; background: #D71920; color: #FFFFFF; border-color: #FF8A8E #5A080B #5A080B #FF8A8E">¡Gol!</button>
         </div>
         <div id="attach-preview" class="attach-preview" hidden></div>
@@ -250,6 +252,7 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
           <div aria-hidden="true" style="position: absolute; top: -14px; left: 50%; width: 90px; height: 24px; margin-left: -45px; background: rgba(255,225,77,0.8); transform: rotate(-3deg); z-index: 2"></div>
           <img src="images/twenty_nine.png" alt="Tarjeta de cumpleaños Twenty Nine estilo New Girl" style="display: block; width: 100%; height: auto">
         </div>
+        <article style="background: #C0C0C0; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; padding: 3px; box-shadow: 4px 4px 0 rgba(0,0,0,0.25); transform: rotate(0.6deg)"><div style="background: linear-gradient(90deg, #0033A0, #3E73D6); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center"><span>marcador_de_jose.exe</span><span aria-hidden="true" style="display: flex; gap: 2px"><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; color: #111111; font-size: 11px; line-height: 12px; text-align: center">x</span></span></div><div style="background: #111111; color: #FFFFFF; padding: 14px; display: flex; flex-direction: column; gap: 10px"><div style="font-family: Anton, Impact, sans-serif; font-size: 24px; color: #FFE14D">MARCADOR DE JOSE</div><div id="scores-body" style="display: flex; flex-direction: column; gap: 12px; font-size: 13px">Cargando resultados…</div><div id="mood" style="border-top: 2px dashed #555555; padding-top: 10px"></div><div style="font-size: 10px; color: #AAAAAA">Datos: TheSportsDB</div></div></article>
         <article style="background: #C0C0C0; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; padding: 3px; box-shadow: 4px 4px 0 rgba(0,0,0,0.25); transform: rotate(-1deg)"><div style="background: linear-gradient(90deg, #0033A0, #3E73D6); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center"><span>estadisticas.xls</span><span aria-hidden="true" style="display: flex; gap: 2px"><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; color: #111111; font-size: 11px; line-height: 12px; text-align: center">x</span></span></div><div style="background: #FFFFFF; padding: 14px">
 <div style="font-family: Anton, Impact, sans-serif; font-size: 22px">DE QUÉ ESTÁ HECHO JOSE</div>
 <div style="display: flex; gap: 14px; align-items: center; margin-top: 10px">
@@ -311,13 +314,14 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
   <div class="win">
     <div class="win-title"><span id="gif-title">buscar_gif.exe</span><button type="button" class="x-btn" data-close aria-label="Cerrar">x</button></div>
     <div class="win-body">
+      <div id="gif-cats" class="gif-cats"></div>
       <form id="gif-form" style="display: flex; gap: 8px">
-        <input id="gif-q" class="field95" aria-label="Buscar GIF" placeholder="Busca: fútbol, cumpleaños, perro golden…" autocomplete="off">
+        <input id="gif-q" class="field95" aria-label="Buscar GIF" placeholder="O busca lo que quieras…" autocomplete="off">
         <button class="btn95" type="submit">Buscar</button>
       </form>
       <div id="gif-results" class="gif-grid"></div>
       <p id="gif-status" class="form-status"></p>
-      <p style="margin: 0; font-size: 11px; color: #555555">GIFs por GIPHY</p>
+      <p style="margin: 0; font-size: 12px; font-weight: 700; color: #111111">Powered by GIPHY</p>
     </div>
   </div>
 </div>
@@ -356,7 +360,7 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
 /* ======== CONFIGURACIÓN: pega aquí tus claves ======== */
 const SUPABASE_URL = 'https://fbrdgksmfoohuqexpijl.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZicmRna3NtZm9vaHVxZXhwaWpsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI5NDc1MTAsImV4cCI6MjEwODUyMzUxMH0.6FmQTH_sd90bBlPoOWFT9Gj_7vt-qyX8j302hPtYqxw';
-const GIPHY_KEY    = 'PEGA_AQUI_TU_GIPHY_KEY';
+const GIPHY_KEY    = 'vCBULEC5cy2Yg6kP77NFT5oAw1vXO0T5';
 /* ===================================================== */
 
 const DEMO = SUPABASE_URL.startsWith('PEGA');
@@ -573,6 +577,7 @@ $('file-photos').addEventListener('change', async e=>{
   }
   busy(false);
   if(!attach.items.length) attach.kind='text';
+  else if(attach.items.every(it=>it.type==='image/gif')) attach.kind='gif';
   if(failed) setStatus(failed===1?'No se pudo abrir una de las fotos. Prueba con otra o guárdala como JPG.':'No se pudieron abrir '+failed+' fotos. Prueba con otras o guárdalas como JPG.', true);
   else if(files.length>room) setStatus('Máximo 6 fotos por mensaje.');
   else setStatus('Fotos listas: '+attach.items.length+'. Escribe tu nombre y dale a ¡Gol!');
@@ -601,16 +606,34 @@ document.addEventListener('keydown', e=>{ if(e.key==='Escape') document.querySel
 
 /* ---------- GIFs ---------- */
 if(!HAS_GIPHY) $('btn-gif').hidden=true;
-$('btn-gif').addEventListener('click', ()=>{ openModal('gif-modal'); if(!$('gif-results').children.length) searchGifs('feliz cumpleaños'); });
-$('gif-form').addEventListener('submit', e=>{ e.preventDefault(); searchGifs($('gif-q').value.trim()||'feliz cumpleaños'); });
+const GIF_CATS=[
+  ['🎂 Feliz cumpleaños','feliz cumpleaños'],['⚽ Golazo','golazo'],['🏃 Maratón','marathon running'],['🗽 Nueva York','new york city'],
+  ['🇪🇨 Ecuador','ecuador'],['📊 Datos','data nerd'],['🏈 NFL','nfl'],['🏈 Steelers','steelers'],['🤍 Real Madrid','real madrid'],
+  ['✈️ Viajes','travel'],['👾 Monsters Inc','monsters inc'],['🟢 Shrek','shrek']
+];
+$('gif-cats').innerHTML=GIF_CATS.map((c,i)=>'<button type="button" data-cat="'+i+'" aria-pressed="false">'+esc(c[0])+'</button>').join('');
+$('gif-cats').addEventListener('click', e=>{
+  const b=e.target.closest('[data-cat]'); if(!b) return;
+  $('gif-cats').querySelectorAll('[data-cat]').forEach(x=>x.setAttribute('aria-pressed', x===b));
+  $('gif-q').value=''; searchGifs(GIF_CATS[+b.dataset.cat][1]);
+});
+$('btn-gif').addEventListener('click', ()=>{ openModal('gif-modal'); if(!$('gif-results').children.length) $('gif-cats').querySelector('[data-cat="0"]').click(); });
+$('gif-form').addEventListener('submit', e=>{ e.preventDefault(); const q=$('gif-q').value.trim(); if(!q) return; $('gif-cats').querySelectorAll('[data-cat]').forEach(x=>x.setAttribute('aria-pressed','false')); searchGifs(q); });
+function showGifs(items){
+  $('gif-results').innerHTML=items.map(g=>'<button type="button" data-gif="'+esc(g.full)+'" data-thumb="'+esc(g.thumb)+'" aria-label="Elegir este GIF"><img src="'+esc(g.thumb)+'" alt="" loading="lazy"></button>').join('');
+  $('gif-status').textContent=items.length?'':'No hay GIFs para esa búsqueda. Prueba otra palabra.';
+}
 async function searchGifs(q){
+  const key='gif:'+q.toLowerCase();
+  try{ const c=JSON.parse(localStorage.getItem(key)||'null'); if(c && Date.now()-c.t<86400000){ showGifs(c.items); return; } }catch(e){}
   $('gif-status').textContent='Buscando…'; $('gif-results').innerHTML='';
   try{
-    const r=await fetch('https://api.giphy.com/v1/gifs/search?api_key='+encodeURIComponent(GIPHY_KEY)+'&q='+encodeURIComponent(q)+'&limit=24&rating=pg-13&lang=es');
+    const r=await fetch('https://api.giphy.com/v1/gifs/search?api_key='+encodeURIComponent(GIPHY_KEY)+'&q='+encodeURIComponent(q)+'&limit=30&rating=pg-13&lang=es');
+    if(r.status===429){ $('gif-status').textContent='Se buscaron muchos GIFs en esta hora. Prueba otra categoría en un rato, o sube un GIF desde tu teléfono con Subir fotos.'; return; }
     const j=await r.json();
     const items=(j.data||[]).map(g=>({thumb:g.images.fixed_width.url, full:(g.images.downsized_medium||g.images.original).url}));
-    $('gif-results').innerHTML=items.map(g=>'<button type="button" data-gif="'+esc(g.full)+'" data-thumb="'+esc(g.thumb)+'" aria-label="Elegir este GIF"><img src="'+esc(g.thumb)+'" alt="" loading="lazy"></button>').join('');
-    $('gif-status').textContent=items.length?'':'No hay GIFs para esa búsqueda. Prueba otra palabra.';
+    try{ localStorage.setItem(key, JSON.stringify({t:Date.now(), items})); }catch(e){}
+    showGifs(items);
   }catch(e){ $('gif-status').textContent='No se pudieron cargar los GIFs. Inténtalo de nuevo.'; }
 }
 $('gif-results').addEventListener('click', e=>{
@@ -619,7 +642,7 @@ $('gif-results').addEventListener('click', e=>{
 });
 
 /* ---------- creador de memes ---------- */
-const TEMPLATES=['hat_original.png','hat_rojo.png','hat_azul.png','hat_amarillo.png','hat_rosa.png','hat_blanco.png','twenty_nine.png','sticker_dog.png'];
+const TEMPLATES=['hat_original.png','hat_rojo.png','hat_azul.png','hat_amarillo.png','hat_rosa.png','hat_blanco.png','twenty_nine.png'];
 let tplImg=null;
 $('tpl-row').innerHTML='<button type="button" id="tpl-upload" aria-label="Subir tu propia imagen" style="display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;text-align:center">Subir<br>imagen</button>'+TEMPLATES.map((t,i)=>'<button type="button" data-tpl="images/'+t+'" aria-pressed="'+(i===0)+'" aria-label="Plantilla '+(i+1)+'"><img src="images/'+t+'" alt=""></button>').join('');
 function loadTpl(src){ const i=new Image(); i.onload=()=>{ tplImg=i; drawMeme(); }; i.src=src; }
@@ -655,7 +678,7 @@ const READY=[
   ['hat_original.png','Yo a los 28','Yo a los 29: mismo crack'],
   ['hat_rojo.png','Cuando El Nacional gana','y además es tu cumple'],
   ['hat_azul.png','Nadie:','Jose: ¿ya vieron mi dashboard?'],
-  ['sticker_dog.png','Papá de 4 goldens','Pelos en la ropa: incontables'],
+  ['hat_amarillo.png','Papá de 4 goldens','Pelos en la ropa: incontables'],
   ['hat_amarillo.png','3:05:46 en Buenos Aires','¿y llegar puntual a la fiesta?'],
   ['hat_rosa.png','Ana: ¿nos vamos?','Jose: un partido más'],
   ['hat_blanco.png','29 años de datos','cero outliers'],
@@ -728,6 +751,46 @@ $('btn-send').addEventListener('click', async ()=>{
   btn.disabled=false; btn.textContent='¡Gol!';
 });
 try{ const n=localStorage.getItem('wall_name'); if(n) $('a-name').value=n; }catch(e){}
+
+/* ---------- marcador de Jose (TheSportsDB) ---------- */
+const TEAMS=[{id:'138222',name:'EL NACIONAL'},{id:'133738',name:'REAL MADRID'},{id:'134925',name:'STEELERS'}];
+const SDB='https://www.thesportsdb.com/api/v1/json/123/';
+async function sdb(path){
+  const key='sdb:'+path;
+  try{ const c=JSON.parse(localStorage.getItem(key)||'null'); if(c && Date.now()-c.t<3*3600000) return c.d; }catch(e){}
+  const r=await fetch(SDB+path); if(!r.ok) throw new Error(r.status);
+  const d=await r.json(); try{ localStorage.setItem(key, JSON.stringify({t:Date.now(), d})); }catch(e){}
+  return d;
+}
+function fmtDate(s){ if(!s) return ''; const d=new Date(s+'T12:00:00'); return d.toLocaleDateString('es',{day:'numeric',month:'short'}); }
+async function loadScores(){
+  const box=$('scores-body'); if(!box) return;
+  const rows=[]; let pts=0, n=0;
+  for(const tm of TEAMS){
+    let last=null, next=null;
+    try{ const d=await sdb('eventslast.php?id='+tm.id); const ev=(d.results||[]).filter(e=>e.intHomeScore!=null&&e.intHomeScore!=='').sort((a,b)=>(b.dateEvent||'').localeCompare(a.dateEvent||'')); last=ev[0]||null; }catch(e){}
+    try{ const d=await sdb('eventsnext.php?id='+tm.id); const ev=(d.events||[]).sort((a,b)=>(a.dateEvent||'').localeCompare(b.dateEvent||'')); next=ev[0]||null; }catch(e){}
+    let line='<span style="color: #AAAAAA">Sin resultados recientes</span>';
+    if(last){
+      const home=last.idHomeTeam===tm.id; const us=+(home?last.intHomeScore:last.intAwayScore), them=+(home?last.intAwayScore:last.intHomeScore);
+      const opp=home?last.strAwayTeam:last.strHomeTeam;
+      const res=us>them?['G','#39FF14']:us<them?['P','#FF6B70']:['E','#FFE14D'];
+      pts+= us>them?1:us===them?0.5:0; n++;
+      line='<span style="display: inline-block; min-width: 20px; text-align: center; background: '+res[1]+'; color: #111111; font-weight: 700; margin-right: 6px">'+res[0]+'</span><span style="font-family: VT323, monospace; font-size: 22px">'+us+'–'+them+'</span> vs. '+esc(opp)+' <span style="color: #AAAAAA">· '+fmtDate(last.dateEvent)+'</span>';
+    }
+    const nx=next?'<div style="color: #AAAAAA; margin-top: 2px">Próximo: '+esc(next.idHomeTeam===tm.id?next.strAwayTeam:next.strHomeTeam)+' · '+fmtDate(next.dateEvent)+'</div>':'';
+    rows.push('<div><div style="font-family: Anton, Impact, sans-serif; font-size: 16px; letter-spacing: 1px">'+tm.name+'</div><div>'+line+'</div>'+nx+'</div>');
+  }
+  box.innerHTML=rows.join('');
+  if(n){
+    const pct=Math.round(100*pts/n);
+    const msg=pct>=80?['😁','Hoy invita él.']:pct>=50?['🙂','Buen día para pedirle favores.']:pct>20?['😐','Háblale de datos, no de fútbol.']:['😡','Mejor no le hables de fútbol hoy.'];
+    $('mood').innerHTML='<div style="font-size: 12px; font-weight: 700; color: #AAAAAA">ÍNDICE DE HUMOR DE JOSE</div><div style="font-family: VT323, monospace; font-size: 34px; line-height: 1.1">'+msg[0]+' '+pct+' %</div><div style="font-size: 13px">'+msg[1]+'</div>';
+  } else {
+    $('mood').innerHTML='<div style="font-size: 13px">Índice de humor: calculando… (vuelve más tarde)</div>';
+  }
+}
+loadScores();
 </script>
 </body>
 </html>
