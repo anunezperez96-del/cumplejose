@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>¡Feliz 29, Jose Maria! · El muro oficial</title>
+<meta name="description" content="El muro de cumpleaños de Jose Maria: deja tu mensaje, fotos, memes y GIFs.">
+<meta property="og:title" content="¡Feliz 29, Jose Maria!">
+<meta property="og:description" content="Firma el libro de visitas: mensajes, fotos, memes y GIFs.">
+<meta property="og:image" content="images/sticker_jose.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=VT323&amp;family=Special+Elite&amp;family=Permanent+Marker&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0033A0}a:hover{color:#D71920}
+:focus-visible{outline:3px solid #D71920;outline-offset:2px}
+button{cursor:pointer}
+button:disabled{opacity:.6;cursor:wait}
+button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !important}
+[hidden]{display:none !important}
+
+/* ticker */
+.ticker{text-align:left !important}
+.ticker-track{display:inline-flex;animation:ticker 38s linear infinite}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* garland sway */
+.sway{transform-origin:50% 0;animation:sway 4.5s ease-in-out infinite}
+.sway:nth-child(odd){animation-duration:5.2s}
+@keyframes sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+
+@media (prefers-reduced-motion: reduce){
+  .ticker-track,.sway{animation:none}
+}
+
+/* stickers only where there is room */
+@media (max-width: 1260px){ .side-stickers{display:none} }
+@media (max-width: 900px){ .hero-stickers,.corner-stickers{display:none} }
+
+/* composer extras */
+.attach-preview{display:flex;flex-wrap:wrap;gap:8px;padding:8px;background:#FFFFFF;border:2px solid;border-color:#404040 #FFFFFF #FFFFFF #404040}
+.attach-item{position:relative;width:84px;height:84px;background:#E8F3FB}
+.attach-item img{width:100%;height:100%;object-fit:cover;display:block}
+.attach-item button{position:absolute;top:-8px;right:-8px;width:26px;height:26px;border-radius:50%;border:2px solid #111;background:#FFFFFF;font-weight:700;line-height:1;padding:0}
+.form-status{margin:0;min-height:1.2em;font-family:VT323,monospace;font-size:20px;color:#0033A0}
+.form-status.err{color:#B3141B}
+
+/* wall windows */
+.win{background:#C0C0C0;border:2px solid;border-color:#FFFFFF #404040 #404040 #FFFFFF;padding:3px;box-shadow:4px 4px 0 rgba(0,0,0,.25)}
+.win-title{color:#FFFFFF;font-weight:700;font-size:13px;padding:4px 6px;display:flex;justify-content:space-between;align-items:center;gap:8px;background:linear-gradient(90deg,#0033A0,#3E73D6)}
+.win.red .win-title{background:linear-gradient(90deg,#8E0F14,#D71920)}
+.win-title span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.win-btns{display:flex;gap:2px;flex:none}
+.win-btns i{width:16px;height:14px;background:#C0C0C0;border:1px solid;border-color:#FFFFFF #404040 #404040 #FFFFFF}
+.win-body{background:#FFFFFF;padding:16px;display:flex;flex-direction:column;gap:10px}
+.post-msg{margin:0;font-size:16px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}
+.post-sig{font-family:VT323,monospace;font-size:20px;color:#0033A0;overflow-wrap:anywhere}
+.post-time{font-size:11px;color:#555555}
+.media-grid{display:grid;gap:4px;margin:-16px -16px 0;background:#FFFFFF}
+.media-grid.n2{grid-template-columns:1fr 1fr}
+.media-grid.n3{grid-template-columns:1fr 1fr}
+.media-grid.n3 button:first-child{grid-column:span 2}
+.media-grid.n4,.media-grid.n5,.media-grid.n6{grid-template-columns:1fr 1fr}
+.media-grid button{all:unset;cursor:zoom-in;display:block}
+.media-grid button:focus-visible{outline:3px solid #D71920}
+.media-grid img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;background:#E8F3FB}
+.media-grid.n2 img,.media-grid.n3 img,.media-grid.n4 img,.media-grid.n5 img,.media-grid.n6 img{aspect-ratio:1/1;height:100%}
+.media-grid.n3 button:first-child img{aspect-ratio:16/10}
+.fact .win-body{background:#FFE14D}
+.fact-label{font-family:VT323,monospace;font-size:20px;color:#111111}
+.fact-text{margin:0;font-family:Anton,Impact,sans-serif;font-size:22px;line-height:1.2;color:#111111}
+.stat .win-body{background:#111111;color:#FFFFFF}
+.stat .fact-label{color:#39FF14}
+.stat .fact-text{color:#FFFFFF}
+.empty .win-body{text-align:center}
+
+#wall > .win{break-inside:avoid;margin:0 0 22px;display:block}
+@media (max-width: 600px){ h1{font-size:15.5vw !important} }
+
+/* overlays */
+.overlay{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(10,36,99,.55);backdrop-filter:blur(3px)}
+.overlay .win{width:min(560px,100%);max-height:calc(100vh - 32px);display:flex;flex-direction:column}
+.overlay .win-body{overflow:auto}
+.x-btn{all:unset;cursor:pointer;width:22px;height:18px;background:#C0C0C0;border:1px solid;border-color:#FFFFFF #404040 #404040 #FFFFFF;color:#111;font-size:13px;text-align:center;line-height:17px}
+.btn95{font:inherit;font-weight:700;padding:10px 16px;min-height:44px;background:#C0C0C0;color:#111111;border:2px solid;border-color:#FFFFFF #404040 #404040 #FFFFFF}
+.btn95.red{background:#D71920;color:#FFFFFF;border-color:#FF8A8E #5A080B #5A080B #FF8A8E}
+.field95{font:inherit;padding:10px 12px;background:#FFFFFF;border:2px solid;border-color:#404040 #FFFFFF #FFFFFF #404040;width:100%;box-sizing:border-box}
+
+#gate{background:#E8F3FB;background-image:radial-gradient(#C9DFEF 1.5px,transparent 1.6px),radial-gradient(#FF8FB1 2.2px,transparent 2.4px),radial-gradient(#FFC93C 2.2px,transparent 2.4px);background-size:22px 22px,137px 151px,173px 127px;backdrop-filter:none}
+.gate-face{display:block;height:180px;margin:0 auto -6px}
+.gate-title{margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:44px;line-height:1;color:#D71920;text-shadow:2px 2px 0 #FFFFFF,4px 4px 0 #0033A0;text-align:center}
+
+.gif-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px}
+.gif-grid button{all:unset;cursor:pointer;display:block;background:#E8F3FB}
+.gif-grid button:focus-visible{outline:3px solid #D71920}
+.gif-grid img{width:100%;height:110px;object-fit:cover;display:block}
+
+.tpl-row{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
+.tpl-row button{all:unset;cursor:pointer;flex:none;width:64px;height:64px;background:#E8F3FB;border:2px solid transparent}
+.tpl-row button[aria-pressed="true"]{border-color:#D71920}
+.tpl-row button:focus-visible{outline:3px solid #D71920}
+.tpl-row img{width:100%;height:100%;object-fit:contain;display:block}
+#meme-canvas{width:100%;height:auto;display:block;background:#E8F3FB}
+
+#lightbox{background:rgba(0,0,0,.85);cursor:zoom-out}
+#lightbox img{max-width:100%;max-height:calc(100vh - 32px);box-shadow:0 10px 40px rgba(0,0,0,.5)}
+
+.demo-banner{position:fixed;left:12px;bottom:12px;z-index:40;background:#FFE14D;color:#111;border:2px solid #111;padding:8px 12px;font-family:VT323,monospace;font-size:18px;box-shadow:3px 3px 0 #111;max-width:calc(100vw - 48px)}
+</style>
+</head>
+<body>
+<div style="position: relative; overflow: hidden; font-family: Verdana, Tahoma, Geneva, sans-serif; color: #111111; background-color: #E8F3FB; background-image: radial-gradient(#C9DFEF 1.5px, transparent 1.6px), radial-gradient(#FF8FB1 2.2px, transparent 2.4px), radial-gradient(#FFC93C 2.2px, transparent 2.4px), radial-gradient(#2BB5A0 2px, transparent 2.2px), radial-gradient(#3E73D6 2px, transparent 2.2px); background-size: 22px 22px, 137px 151px, 173px 127px, 191px 163px, 149px 181px; background-position: 0 0, 31px 47px, 89px 13px, 140px 96px, 62px 120px; min-height: 100vh">
+
+
+  <div aria-hidden="true" style="position: relative; z-index: 1; height: 14px; background: repeating-linear-gradient(90deg, #D71920 0 60px, #FFFFFF 60px 80px, #0033A0 80px 140px, #FFFFFF 140px 160px)"></div>
+  <div class="ticker" style="position: relative; z-index: 1; background: #000000; color: #FFE14D; font-family: VT323, monospace; font-size: 22px; padding: 6px 16px; white-space: nowrap; overflow: hidden; text-align: center"><span class="ticker-track"><span>★ ¡BIENVENIDOS AL MURO OFICIAL DE JOSE MARIA! ★ 29 OCT · NUEVA YORK ★ ¡VAMOS NACIONAL! ★ ¡FIRMA EL LIBRO DE VISITAS! ★&nbsp;</span><span aria-hidden="true">★ ¡BIENVENIDOS AL MURO OFICIAL DE JOSE MARIA! ★ 29 OCT · NUEVA YORK ★ ¡VAMOS NACIONAL! ★ ¡FIRMA EL LIBRO DE VISITAS! ★&nbsp;</span></span></div>
+
+  
+
+  <header style="position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+    <div style="font-family: Anton, Impact, sans-serif; font-size: 22px; letter-spacing: 2px; color: #0033A0">EL NACIONAL · JORNADA DE CUMPLE</div>
+    <div style="display: flex; align-items: stretch; border: 3px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; font-family: Anton, Impact, sans-serif; color: #FFFFFF">
+      <div style="background: #D71920; padding: 8px 16px; font-size: 20px">JOSE MARIA</div>
+      <div style="background: #000000; padding: 4px 16px; font-family: VT323, monospace; font-size: 30px; color: #39FF14">29 - 0</div>
+      <div style="background: #0033A0; padding: 8px 16px; font-size: 20px">CANSANCIO</div>
+    </div>
+    <div style="display: flex; gap: 8px; align-items: center; font-family: VT323, monospace; font-size: 22px">VISITAS: <span id="visits" style="display: flex; gap: 2px"></span></div>
+  </header>
+
+  <div style="position: relative; z-index: 1; max-width: 1180px; margin: 0 auto 8px; padding: 0 24px">
+    <div style="background: #FFFFFF; border: 2px solid #111111; box-shadow: 4px 4px 0 #D71920; padding: 10px 16px; display: flex; flex-wrap: wrap; gap: 8px 28px; justify-content: center; font-family: Anton, Impact, sans-serif; font-size: 18px; letter-spacing: 1px; color: #0A2463">
+      <span>ANFITRIÓN: JOSE MARIA</span><span style="color: #D71920">★</span><span>INVITADO MUSICAL: THE WOMBATS (EN ESPÍRITU)</span><span style="color: #D71920">★</span><span>SEDE: NUEVA YORK</span>
+    </div>
+  </div>
+
+  <section style="position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 12px 24px 0; text-align: center">
+    
+    <h1 style="position: relative; margin: 0; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: clamp(4.5rem, 14vw, 11rem); line-height: 0.95; letter-spacing: 3px; color: #D71920; text-shadow: 3px 3px 0 #FFFFFF, 6px 6px 0 #0033A0, 9px 9px 0 #111111">¡VEINTINUEVE!</h1>
+    
+    <div aria-label="Guirnalda de caras de Jose Maria con gorros de fiesta" role="img" style="position: relative; z-index: 2; height: clamp(209px, 26.4vw, 341px); max-width: 1280px; margin: 0 auto; text-align: start">
+    <svg aria-hidden="true" viewBox="0 0 1000 120" preserveAspectRatio="none" style="position: absolute; left: 0; top: 0; width: 100%; height: 120px"><path d="M0 20 Q500 110 1000 20" fill="none" stroke="#8B6B3E" stroke-width="3" stroke-dasharray="6 3" vector-effect="non-scaling-stroke"></path></svg>
+      <div style="position: absolute; left: 7.14%; top: 24px; transform: translateX(-50%) rotate(-8deg); transform-origin: 50% 0">
+        <div class="sway" style="position: relative">
+          <img src="images/hat_rojo.png" alt="" style="display: block; height: clamp(121px, 18.7vw, 242px); width: auto; filter: drop-shadow(3px 5px 0 rgba(0,0,0,0.2))">
+          <span style="position: absolute; left: 50%; top: 21%; transform: translate(-50%, -50%); width: clamp(22px, 2.9vw, 35px); height: clamp(22px, 2.9vw, 35px); border-radius: 50%; background: #FFF4DC; border: 2px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-family: Anton, Impact, sans-serif; font-size: clamp(11px, 1.3vw, 16px); color: #1A1A1A">29</span>
+        </div>
+      </div>
+      <div style="position: absolute; left: 21.43%; top: 42px; transform: translateX(-50%) rotate(5deg); transform-origin: 50% 0">
+        <div class="sway" style="position: relative">
+          <img src="images/hat_azul.png" alt="" style="display: block; height: clamp(121px, 18.7vw, 242px); width: auto; filter: drop-shadow(3px 5px 0 rgba(0,0,0,0.2))">
+          <span style="position: absolute; left: 50%; top: 21%; transform: translate(-50%, -50%); width: clamp(22px, 2.9vw, 35px); height: clamp(22px, 2.9vw, 35px); border-radius: 50%; background: #FFF4DC; border: 2px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-family: Anton, Impact, sans-serif; font-size: clamp(11px, 1.3vw, 16px); color: #1A1A1A">29</span>
+        </div>
+      </div>
+      <div style="position: absolute; left: 35.71%; top: 53px; transform: translateX(-50%) rotate(-4deg); transform-origin: 50% 0">
+        <div class="sway" style="position: relative">
+          <img src="images/hat_amarillo.png" alt="" style="display: block; height: clamp(121px, 18.7vw, 242px); width: auto; filter: drop-shadow(3px 5px 0 rgba(0,0,0,0.2))">
+          <span style="position: absolute; left: 50%; top: 21%; transform: translate(-50%, -50%); width: clamp(22px, 2.9vw, 35px); height: clamp(22px, 2.9vw, 35px); border-radius: 50%; background: #FFF4DC; border: 2px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-family: Anton, Impact, sans-serif; font-size: clamp(11px, 1.3vw, 16px); color: #1A1A1A">29</span>
+        </div>
+      </div>
+      <div style="position: absolute; left: 50.00%; top: 57px; transform: translateX(-50%) rotate(2deg); transform-origin: 50% 0">
+        <div class="sway" style="position: relative">
+          <img src="images/hat_original.png" alt="" style="display: block; height: clamp(121px, 18.7vw, 242px); width: auto; filter: drop-shadow(3px 5px 0 rgba(0,0,0,0.2))">
+          <span style="position: absolute; left: 50%; top: 21%; transform: translate(-50%, -50%); width: clamp(22px, 2.9vw, 35px); height: clamp(22px, 2.9vw, 35px); border-radius: 50%; background: #FFF4DC; border: 2px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-family: Anton, Impact, sans-serif; font-size: clamp(11px, 1.3vw, 16px); color: #1A1A1A">29</span>
+        </div>
+      </div>
+      <div style="position: absolute; left: 64.29%; top: 53px; transform: translateX(-50%) rotate(-3deg); transform-origin: 50% 0">
+        <div class="sway" style="position: relative">
+          <img src="images/hat_rosa.png" alt="" style="display: block; height: clamp(121px, 18.7vw, 242px); width: auto; filter: drop-shadow(3px 5px 0 rgba(0,0,0,0.2))">
+          <span style="position: absolute; left: 50%; top: 21%; transform: translate(-50%, -50%); width: clamp(22px, 2.9vw, 35px); height: clamp(22px, 2.9vw, 35px); border-radius: 50%; background: #FFF4DC; border: 2px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-family: Anton, Impact, sans-serif; font-size: clamp(11px, 1.3vw, 16px); color: #1A1A1A">29</span>
+        </div>
+      </div>
+      <div style="position: absolute; left: 78.57%; top: 42px; transform: translateX(-50%) rotate(6deg); transform-origin: 50% 0">
+        <div class="sway" style="position: relative">
+          <img src="images/hat_blanco.png" alt="" style="display: block; height: clamp(121px, 18.7vw, 242px); width: auto; filter: drop-shadow(3px 5px 0 rgba(0,0,0,0.2))">
+          <span style="position: absolute; left: 50%; top: 21%; transform: translate(-50%, -50%); width: clamp(22px, 2.9vw, 35px); height: clamp(22px, 2.9vw, 35px); border-radius: 50%; background: #FFF4DC; border: 2px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-family: Anton, Impact, sans-serif; font-size: clamp(11px, 1.3vw, 16px); color: #1A1A1A">29</span>
+        </div>
+      </div>
+      <div style="position: absolute; left: 92.86%; top: 24px; transform: translateX(-50%) rotate(-7deg); transform-origin: 50% 0">
+        <div class="sway" style="position: relative">
+          <img src="images/hat_rojo.png" alt="" style="display: block; height: clamp(121px, 18.7vw, 242px); width: auto; filter: drop-shadow(3px 5px 0 rgba(0,0,0,0.2))">
+          <span style="position: absolute; left: 50%; top: 21%; transform: translate(-50%, -50%); width: clamp(22px, 2.9vw, 35px); height: clamp(22px, 2.9vw, 35px); border-radius: 50%; background: #FFF4DC; border: 2px solid #1A1A1A; display: flex; align-items: center; justify-content: center; font-family: Anton, Impact, sans-serif; font-size: clamp(11px, 1.3vw, 16px); color: #1A1A1A">29</span>
+        </div>
+      </div>
+  </div><p style="position: relative; display: inline-block; margin: 8px auto 0; max-width: 640px; font-family: Special Elite, Courier New, monospace; font-size: 20px; line-height: 1.55; text-transform: uppercase; letter-spacing: 0.5px; background: #FFFFFF; border: 2px solid #111111; padding: 12px 18px; box-shadow: 4px 4px 0 #0033A0"><b>CORREDOR, NERD DE LOS DATOS Y FANÁTICO DE LOS DEPORTES. POR SU CUMPLEAÑOS DÉJALE A JOSE MARIA UN MENSAJE, UNA FOTO, UN MEME O UN GIF EN SU MURO.</b></p>
+    <div class="hero-stickers" aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: -40px; height: 0; z-index: 3; pointer-events: none">
+      <img src="images/sticker_dog.png" alt="" style="position: absolute; bottom: 0; left: 3%; width: 150px; height: auto; transform: rotate(-7deg)">
+      <img src="images/sticker_nerd.png" alt="" style="position: absolute; bottom: 20px; right: 3%; width: 180px; height: auto; transform: rotate(6deg)">
+    </div>
+  </section>
+
+  <section aria-label="Estadísticas de Jose Maria" style="position: relative; z-index: 2; max-width: 1180px; margin: 32px auto 0; padding: 0 24px">
+    <div style="background: #111111; color: #FFFFFF; border: 3px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; box-shadow: 4px 4px 0 #D71920; padding: 12px 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px 20px; align-items: center">
+      <div style="display: flex; gap: 10px; align-items: center"><svg viewBox="0 0 160 160" width="46" height="46" role="img" aria-label="Deportes 40 por ciento, correr 25, SNL 20, The Wombats 15"><g transform="rotate(-90 80 80)"><circle cx="80" cy="80" r="60" fill="none" stroke="#D71920" stroke-width="34" stroke-dasharray="150.8 377"></circle><circle cx="80" cy="80" r="60" fill="none" stroke="#3E73D6" stroke-width="34" stroke-dasharray="94.2 377" stroke-dashoffset="-150.8"></circle><circle cx="80" cy="80" r="60" fill="none" stroke="#FFFFFF" stroke-width="34" stroke-dasharray="75.4 377" stroke-dashoffset="-245"></circle><circle cx="80" cy="80" r="60" fill="none" stroke="#FFE14D" stroke-width="34" stroke-dasharray="56.5 377" stroke-dashoffset="-320.4"></circle></g></svg><div style="font-size: 12px; line-height: 1.35; font-weight: 700"><span style="font-family: Anton, Impact, sans-serif; font-size: 15px; font-weight: 400">DE QUÉ ESTÁ HECHO JOSE</span><br>Deportes · Correr · Ecuador</div></div>
+      <div style="display: flex; gap: 10px; align-items: center"><div style="font-family: VT323, monospace; font-size: 44px; line-height: 1; color: #FFE14D">29</div><div style="font-size: 12px; line-height: 1.35; font-weight: 700">vueltas al sol<br>(datos verificados)</div></div>
+      <div style="display: flex; gap: 10px; align-items: center"><div style="font-family: VT323, monospace; font-size: 44px; line-height: 1; color: #FF6B70">100%</div><div style="font-size: 12px; line-height: 1.35; font-weight: 700">El Nacional, estadísticamente significativo</div></div>
+      <div style="display: flex; gap: 10px; align-items: center"><div style="font-family: VT323, monospace; font-size: 44px; line-height: 1; color: #7FD1FF">97%</div><div style="font-size: 12px; line-height: 1.35; font-weight: 700">probabilidad de hablar de fútbol esta noche</div></div>
+      <div style="display: flex; gap: 10px; align-items: center"><div style="font-family: VT323, monospace; font-size: 44px; line-height: 1; color: #FFFFFF">NYC</div><div style="font-size: 12px; line-height: 1.35; font-weight: 700">sede de la fiesta<br>29 oct</div></div>
+    </div>
+  </section>
+
+  <section style="position: relative; z-index: 1; max-width: 760px; margin: 40px auto 0; padding: 0 24px">
+    <div class="side-stickers" aria-hidden="true" style="position: absolute; inset: 0; z-index: 0; pointer-events: none">
+      <img src="images/sticker_taxi.png" alt="" style="position: absolute; top: -70px; right: 100%; width: 195px; height: auto; transform: rotate(-8deg)">
+      <img src="images/sticker_heart.png" alt="" style="position: absolute; top: 60px; right: 106%; width: 150px; height: auto; transform: rotate(5deg)">
+      <img src="images/sticker_cake.png" alt="" style="position: absolute; top: 185px; right: 104%; width: 135px; height: auto; transform: rotate(-5deg)">
+      <img src="images/sticker_crest.png" alt="" style="position: absolute; top: -100px; left: 108%; width: 120px; height: auto; transform: rotate(8deg)">
+      <img src="images/sticker_medal.png" alt="" style="position: absolute; top: 90px; left: 113%; width: 115px; height: auto; transform: rotate(-7deg)">
+      <img src="images/sticker_pc.png" alt="" style="position: absolute; top: 285px; left: 101%; width: 165px; height: auto; transform: rotate(6deg)">
+    </div>
+    <div class="corner-stickers" aria-hidden="true" style="position: absolute; inset: 0; z-index: 2; pointer-events: none">
+      <img src="images/sticker_jose.png" alt="" style="position: absolute; top: -70px; right: -50px; width: 125px; height: auto; transform: rotate(12deg)">
+      <img src="images/sticker_vinyl.png" alt="" style="position: absolute; bottom: -100px; left: -100px; width: 120px; height: auto; transform: rotate(-12deg)">
+    </div>
+    <div style="background: #C0C0C0; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; padding: 3px; position: relative; z-index: 1; box-shadow: 4px 4px 0 rgba(0,0,0,0.25)">
+      <div style="background: linear-gradient(90deg, #0033A0, #3E73D6); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center"><span>Firmar_libro_de_visitas.exe</span><span aria-hidden="true" style="display: flex; gap: 2px"><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; color: #111111; font-size: 11px; line-height: 12px; text-align: center">x</span></span></div>
+      <div style="padding: 18px; display: flex; flex-direction: column; gap: 10px">
+        <div style="font-family: Anton, Impact, sans-serif; font-size: 28px; letter-spacing: 1px; color: #0033A0">FIRMA LA ALINEACIÓN</div>
+        <label for="a-name" style="font-weight: 700; font-size: 13px">Tu nombre:</label>
+        <input id="a-name" maxlength="60" autocomplete="name" placeholder="Tu nombre" style="font: inherit; padding: 10px 12px; background: #FFFFFF; border: 2px solid; border-color: #404040 #FFFFFF #FFFFFF #404040">
+        <label for="a-msg" style="font-weight: 700; font-size: 13px">Tu mensaje:</label>
+        <textarea id="a-msg" maxlength="2000" placeholder="Feliz cumple, crack..." style="font: inherit; padding: 10px 12px; background: #FFFFFF; border: 2px solid; border-color: #404040 #FFFFFF #FFFFFF #404040; min-height: 90px"></textarea>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <button type="button" id="btn-photos" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Subir fotos</button>
+          <button type="button" id="btn-meme" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Subir meme</button>
+          <button type="button" id="btn-gif" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Agregar GIF</button>
+          <button type="button" id="btn-maker" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Crear meme</button>
+          <button type="button" id="btn-send" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; margin-left: auto; background: #D71920; color: #FFFFFF; border-color: #FF8A8E #5A080B #5A080B #FF8A8E">¡Gol!</button>
+        </div>
+        <div id="attach-preview" class="attach-preview" hidden></div>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        <input type="file" id="file-photos" accept="image/*" multiple hidden>
+        <input type="file" id="file-meme" accept="image/*" hidden>
+      </div>
+    </div>
+  </section>
+
+  <section style="position: relative; z-index: 1; max-width: 1180px; margin: 56px auto 0; padding: 0 24px 56px">
+    <h2 style="margin: 0 0 22px; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: 42px; letter-spacing: 1px; color: #0033A0; text-shadow: 3px 3px 0 #FFE14D; text-align: center">EL MURO <span style="color: rgb(215, 25, 32)">· <span id="goal-count">0</span> GOLES ANOTADOS</span></h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
+      <div id="wall" style="flex: 999 1 560px; min-width: 0; columns: 250px; column-gap: 22px"></div>
+      <aside style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 26px">
+        <div style="position: relative; background: #FFFFFF; border: 6px solid #FFFFFF; transform: rotate(-2deg); box-shadow: 4px 6px 0 rgba(0,0,0,0.2)">
+          <div aria-hidden="true" style="position: absolute; top: -14px; left: 50%; width: 90px; height: 24px; margin-left: -45px; background: rgba(255,225,77,0.8); transform: rotate(-3deg); z-index: 2"></div>
+          <img src="images/twenty_nine.png" alt="Tarjeta de cumpleaños Twenty Nine estilo New Girl" style="display: block; width: 100%; height: auto">
+        </div>
+        <article style="background: #C0C0C0; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; padding: 3px; box-shadow: 4px 4px 0 rgba(0,0,0,0.25); transform: rotate(-1deg)"><div style="background: linear-gradient(90deg, #0033A0, #3E73D6); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center"><span>estadisticas.xls</span><span aria-hidden="true" style="display: flex; gap: 2px"><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; color: #111111; font-size: 11px; line-height: 12px; text-align: center">x</span></span></div><div style="background: #FFFFFF; padding: 14px">
+<div style="font-family: Anton, Impact, sans-serif; font-size: 22px">DE QUÉ ESTÁ HECHO JOSE</div>
+<div style="display: flex; gap: 14px; align-items: center; margin-top: 10px">
+<svg viewBox="0 0 160 160" width="116" height="116" style="flex: none" role="img" aria-label="Gráfico: fútbol 35 por ciento, correr 25, viajar 15, datos y gráficos 15, SNL y The Wombats 10"><g transform="rotate(-90 80 80)"><circle cx="80" cy="80" r="60" fill="none" stroke="#D71920" stroke-width="34" stroke-dasharray="131.9 377" stroke-dashoffset="0.0"></circle><circle cx="80" cy="80" r="60" fill="none" stroke="#0033A0" stroke-width="34" stroke-dasharray="94.2 377" stroke-dashoffset="-131.9"></circle><circle cx="80" cy="80" r="60" fill="none" stroke="#2BB5A0" stroke-width="34" stroke-dasharray="56.5 377" stroke-dashoffset="-226.2"></circle><circle cx="80" cy="80" r="60" fill="none" stroke="#FFC93C" stroke-width="34" stroke-dasharray="56.5 377" stroke-dashoffset="-282.8"></circle><circle cx="80" cy="80" r="60" fill="none" stroke="#7FB2E5" stroke-width="34" stroke-dasharray="37.7 377" stroke-dashoffset="-339.3"></circle></g></svg>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px">
+<div style="display: flex; gap: 8px; align-items: center"><span style="width: 12px; height: 12px; flex: none; background: #D71920"></span>Fútbol 35 %</div>
+<div style="display: flex; gap: 8px; align-items: center"><span style="width: 12px; height: 12px; flex: none; background: #0033A0"></span>Correr 25 %</div>
+<div style="display: flex; gap: 8px; align-items: center"><span style="width: 12px; height: 12px; flex: none; background: #2BB5A0"></span>Viajar 15 %</div>
+<div style="display: flex; gap: 8px; align-items: center"><span style="width: 12px; height: 12px; flex: none; background: #FFC93C"></span>Datos y gráficos 15 %</div>
+<div style="display: flex; gap: 8px; align-items: center"><span style="width: 12px; height: 12px; flex: none; background: #7FB2E5"></span>SNL + The Wombats 10 %</div>
+</div></div></div></article><article style="background: #C0C0C0; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; padding: 3px; box-shadow: 4px 4px 0 rgba(0,0,0,0.25); transform: rotate(0.8deg)"><div style="background: linear-gradient(90deg, #8E0F14, #D71920); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center"><span>probabilidad.exe</span><span aria-hidden="true" style="display: flex; gap: 2px"><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; color: #111111; font-size: 11px; line-height: 12px; text-align: center">x</span></span></div><div style="background: #FFFFFF; padding: 14px">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 1px">PROBABILIDAD DE QUE JOSE NO GANE NINGUN FANTASY ESTE AÑO</div>
+<div style="font-family: VT323, monospace; font-size: 72px; line-height: 1; color: #D71920; margin-top: 4px">97%</div>
+<div style="height: 22px; border: 2px solid; border-color: #404040 #FFFFFF #FFFFFF #404040; background: #FFFFFF; padding: 2px; display: flex; gap: 2px">
+<span style="flex: 1; background: #0033A0"></span><span style="flex: 1; background: #0033A0"></span><span style="flex: 1; background: #0033A0"></span><span style="flex: 1; background: #0033A0"></span><span style="flex: 1; background: #0033A0"></span><span style="flex: 1; background: #0033A0"></span><span style="flex: 1; background: #0033A0"></span><span style="flex: 1; background: #0033A0"></span><span style="flex: 1; background: #0033A0"></span><span style="flex: 0.7; background: #0033A0"></span><span style="flex: 0.3"></span></div>
+</div></article><article style="background: #C0C0C0; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; padding: 3px; box-shadow: 4px 4px 0 rgba(0,0,0,0.25); transform: rotate(0.6deg)"><div style="background: linear-gradient(90deg, #0033A0, #3E73D6); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center"><span>km_corridos.xls</span><span aria-hidden="true" style="display: flex; gap: 2px"><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; color: #111111; font-size: 11px; line-height: 12px; text-align: center">x</span></span></div><div style="background: #FFFFFF; padding: 14px">
+<div style="font-family: Anton, Impact, sans-serif; font-size: 26px">KM CORRIDOS</div>
+<svg viewBox="0 0 240 140" width="100%" role="img" aria-label="Gráfico de barras: los kilómetros corridos suben cada año de los 26 a los 29"><line x1="10" y1="118" x2="230" y2="118" stroke="#111111" stroke-width="2"></line><rect x="24" y="78" width="36" height="40" fill="#0033A0"></rect><text x="42" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#111111">26</text><rect x="76" y="56" width="36" height="62" fill="#0033A0"></rect><text x="94" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#111111">27</text><rect x="128" y="34" width="36" height="84" fill="#0033A0"></rect><text x="146" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#111111">28</text><rect x="180" y="10" width="36" height="108" fill="#D71920"></rect><text x="198" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#111111">29</text><text x="218" y="16" text-anchor="end" font-family="VT323, monospace" font-size="16" fill="#D71920">¡RÉCORD!</text></svg>
+<div style="font-size: 12px">Tendencia: imparable. Las rodillas no opinan lo mismo.</div></div></article><article style="background: #C0C0C0; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; padding: 3px; box-shadow: 4px 4px 0 rgba(0,0,0,0.25); transform: rotate(-0.4deg)"><div style="background: linear-gradient(90deg, #0033A0, #3E73D6); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center"><span>sus_maratones.csv</span><span aria-hidden="true" style="display: flex; gap: 2px"><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; color: #111111; font-size: 11px; line-height: 12px; text-align: center">x</span></span></div><div style="background: #FFFFFF; padding: 14px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-family: Anton, Impact, sans-serif; font-size: 26px">SUS MARATONES</div>
+<div style="display: grid; grid-template-columns: 92px 1fr; gap: 8px; align-items: center; font-size: 13px"><span style="font-weight: 700">Buenos Aires</span><span style="display: flex; align-items: center; gap: 6px"><span style="height: 18px; width: 93%; background: #D71920"></span></span></div>
+<div style="margin: -4px 0 4px 100px; font-family: VT323, monospace; font-size: 20px">3:05:46 <span style="font-family: VT323, monospace; font-size: 16px; color: #D71920">¡RÉCORD!</span></div>
+<div style="display: grid; grid-template-columns: 92px 1fr; gap: 8px; align-items: center; font-size: 13px"><span style="font-weight: 700">San Diego</span><span style="display: flex; align-items: center; gap: 6px"><span style="height: 18px; width: 97%; background: #0033A0"></span></span></div>
+<div style="margin: -4px 0 4px 100px; font-family: VT323, monospace; font-size: 20px">3:14:39</div>
+<div style="display: grid; grid-template-columns: 92px 1fr; gap: 8px; align-items: center; font-size: 13px"><span style="font-weight: 700">Praga</span><span style="font-family: VT323, monospace; font-size: 20px; color: #555555">tiempo en camino…</span></div>
+<div style="font-size: 12px">Menos es más: barra más corta, maratón más rápido.</div></div></article><article style="background: #C0C0C0; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; padding: 3px; box-shadow: 4px 4px 0 rgba(0,0,0,0.25); transform: rotate(-0.5deg)"><div style="background: linear-gradient(90deg, #0033A0, #3E73D6); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center"><span>grafico_tacos.bmp</span><span aria-hidden="true" style="display: flex; gap: 2px"><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; color: #111111; font-size: 11px; line-height: 12px; text-align: center">x</span></span></div><div style="background: #FFFFFF; padding: 14px">
+<div style="font-family: Anton, Impact, sans-serif; font-size: 22px">KM CORRIDOS <br>VS. <br>BAGELS EN NYC</div>
+<svg viewBox="0 0 240 130" width="100%" role="img" aria-label="Gráfico de barras: los tacos le ganan a los kilómetros"><line x1="10" y1="110" x2="230" y2="110" stroke="#111111" stroke-width="2"></line><rect x="40" y="50" width="60" height="60" fill="#0033A0"></rect><rect x="140" y="8" width="60" height="102" fill="#D71920"></rect><text x="70" y="126" text-anchor="middle" font-size="12" font-weight="700" fill="#111111">KM</text><text x="170" y="126" text-anchor="middle" font-size="12" font-weight="700" fill="#111111">BAGELS</text></svg>
+<div style="font-size: 12px">Proyección para el fin de semana del cumple.</div></div></article><div style="position: relative; background: #FFE14D; color: #111111; padding: 22px 18px 18px; transform: rotate(1.5deg); box-shadow: 4px 6px 0 rgba(0,0,0,0.25)">
+<div aria-hidden="true" style="position: absolute; top: -12px; left: 50%; width: 90px; height: 24px; margin-left: -45px; background: rgba(255,255,255,0.7); transform: rotate(-3deg)"></div>
+<div style="font-family: VT323, monospace; font-size: 20px">NOTA DEL ANALISTA</div>
+<p style="margin: 6px 0 0; font-family: Permanent Marker, cursive; font-size: 20px; line-height: 1.35">29 años de datos y cero outliers: sigue igual de crack, ahora con más canas.</p></div>
+      </aside>
+    </div>
+  </section>
+
+  <footer style="position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 0 24px 40px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 88px; height: 31px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; font-family: VT323, monospace; font-size: 15px; line-height: 1; text-align: center">MEJOR VISTO EN NETSCAPE</span><span style="display: inline-flex; align-items: center; justify-content: center; width: 88px; height: 31px; background: #0033A0; color: #FFFFFF; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; font-family: VT323, monospace; font-size: 15px; line-height: 1; text-align: center">HECHO CON DATOS</span><span style="display: inline-flex; align-items: center; justify-content: center; width: 88px; height: 31px; background: #D71920; color: #FFFFFF; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; font-family: VT323, monospace; font-size: 15px; line-height: 1; text-align: center">¡VAMOS NACIONAL!</span><span style="display: inline-flex; align-items: center; justify-content: center; width: 88px; height: 31px; background: #000000; color: #FFE14D; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; font-family: VT323, monospace; font-size: 15px; line-height: 1; text-align: center">THE WOMBATS FAN</span>
+    </div>
+    <div style="font-family: VT323, monospace; font-size: 20px">© 1997–2026 Club de Fans de Jose Maria · Optimizado para 800×600</div>
+  </footer>
+  <div aria-hidden="true" style="position: relative; z-index: 1; height: 14px; background: repeating-linear-gradient(90deg, #D71920 0 60px, #FFFFFF 60px 80px, #0033A0 80px 140px, #FFFFFF 140px 160px)"></div>
+</div>
+<!-- Entrada con contraseña -->
+<div id="gate" class="overlay" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+  <div class="win">
+    <div class="win-title"><span>acceso_vip.exe</span><span class="win-btns" aria-hidden="true"><i></i><i></i><i></i></span></div>
+    <form id="gate-form" class="win-body" style="gap: 12px">
+      <img class="gate-face" src="images/sticker_jose.png" alt="">
+      <h1 id="gate-title" class="gate-title">¡VEINTINUEVE!</h1>
+      <p style="margin: 0; text-align: center; font-family: Special Elite, Courier New, monospace; font-size: 18px; line-height: 1.5">Este muro es solo para la gente de Jose Maria. Escribe la contraseña que te mandaron con la invitación.</p>
+      <label for="gate-pass" style="font-weight: 700; font-size: 13px">Contraseña:</label>
+      <input id="gate-pass" class="field95" type="password" autocomplete="current-password" required>
+      <button class="btn95 red" type="submit" id="gate-btn">Entrar al muro</button>
+      <p id="gate-msg" class="form-status err" role="alert"></p>
+    </form>
+  </div>
+</div>
+
+<!-- Buscador de GIFs -->
+<div id="gif-modal" class="overlay" role="dialog" aria-modal="true" aria-labelledby="gif-title" hidden>
+  <div class="win">
+    <div class="win-title"><span id="gif-title">buscar_gif.exe</span><button type="button" class="x-btn" data-close aria-label="Cerrar">x</button></div>
+    <div class="win-body">
+      <form id="gif-form" style="display: flex; gap: 8px">
+        <input id="gif-q" class="field95" aria-label="Buscar GIF" placeholder="Busca: fútbol, cumpleaños, perro golden…" autocomplete="off">
+        <button class="btn95" type="submit">Buscar</button>
+      </form>
+      <div id="gif-results" class="gif-grid"></div>
+      <p id="gif-status" class="form-status"></p>
+      <p style="margin: 0; font-size: 11px; color: #555555">GIFs por GIPHY</p>
+    </div>
+  </div>
+</div>
+
+<!-- Creador de memes -->
+<div id="maker-modal" class="overlay" role="dialog" aria-modal="true" aria-labelledby="maker-title" hidden>
+  <div class="win">
+    <div class="win-title"><span id="maker-title">creador_de_memes.exe</span><button type="button" class="x-btn" data-close aria-label="Cerrar">x</button></div>
+    <div class="win-body">
+      <div style="font-weight: 700; font-size: 13px">1. Elige la imagen</div>
+      <div id="tpl-row" class="tpl-row"></div>
+      <canvas id="meme-canvas" width="800" height="800" aria-label="Vista previa del meme"></canvas>
+      <label for="meme-top" style="font-weight: 700; font-size: 13px">2. Texto de arriba</label>
+      <input id="meme-top" class="field95" maxlength="80" placeholder="YO A LOS 28">
+      <label for="meme-bottom" style="font-weight: 700; font-size: 13px">3. Texto de abajo</label>
+      <input id="meme-bottom" class="field95" maxlength="80" placeholder="YO A LOS 29: IGUAL DE CRACK">
+      <input type="file" id="file-tpl" accept="image/*" hidden>
+      <button type="button" class="btn95 red" id="maker-use">Usar este meme</button>
+    </div>
+  </div>
+</div>
+
+<!-- Foto grande -->
+<div id="lightbox" class="overlay" role="dialog" aria-modal="true" aria-label="Foto ampliada" hidden>
+  <img alt="">
+</div>
+
+<div id="demo-banner" class="demo-banner" hidden>MODO DEMO: los mensajes no se guardan. Falta conectar Supabase.</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script>
+/* ======== CONFIGURACIÓN: pega aquí tus claves ======== */
+const SUPABASE_URL = 'https://fbrdgksmfoohuqexpijl.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZicmRna3NtZm9vaHVxZXhwaWpsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI5NDc1MTAsImV4cCI6MjEwODUyMzUxMH0.6FmQTH_sd90bBlPoOWFT9Gj_7vt-qyX8j302hPtYqxw';
+const GIPHY_KEY    = 'PEGA_AQUI_TU_GIPHY_KEY';
+/* ===================================================== */
+
+const DEMO = SUPABASE_URL.startsWith('PEGA');
+const HAS_GIPHY = !GIPHY_KEY.startsWith('PEGA') && GIPHY_KEY.length > 5;
+const db = DEMO ? null : supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+const $ = (id) => document.getElementById(id);
+let PASS = '';
+let posts = [];
+const demoPosts = [];
+
+const FACTS = [
+  'Récord personal: 3:05:46 en Buenos Aires. Récord para llegar puntual a una fiesta: pendiente.',
+  'Maratones completados: Praga, Buenos Aires y San Diego. Próxima sede sugerida: la pista de baile.',
+  'Equipos en su corazón: El Nacional, Real Madrid y los Steelers. Fines de semana libres: 0.',
+  'Millas de viajero frecuente vs. km corridos: el avión va ganando.',
+  'Ana y Jose: 10 años juntos. Nivel de confianza del modelo: 100 %.',
+  'Hermano mayor de tres. Cargo oficial: CEO del grupo familiar de WhatsApp.',
+  'Herramientas favoritas: Power BI, gráficos, más gráficos… y Claude. (Esto lo escribió Claude. Sesgo declarado.)',
+  'Correlación entre los goles de El Nacional y el humor de Jose: r = 0,97.',
+  'Papá de 4 goldens. Pelos de perro en su ropa: estadísticamente imposibles de contar.',
+  'Probabilidad de que cite a SNL esta noche: 88 %.',
+  'The Wombats reproducidos este año: suficientes para preocupar a Spotify.',
+  'San Diego: 3:14:39. Buenos Aires: 3:05:46. Tendencia: cada vez más rápido.'
+];
+const FACT_FILES = ['dato_curioso.txt','analisis.exe','informe_final.doc','modelo_predictivo.py','hallazgo.txt','reporte.pbix'];
+const STOP = new Set('para pero como esta este esto todo todos todas tiene tienes eres eres sobre desde hasta cuando donde porque muchas mucho muy feliz cumple cumpleaños happy birthday jose maria josé maría tus tuyo tuya hola años que los las una uno unos unas del con por sus nos más mas son ser fue hay the and you your for with este estos estas eso esa ese aqui aquí ahora siempre nunca bien hoy dia día'.split(' '));
+
+/* ---------- utilidades ---------- */
+function esc(s){ const d=document.createElement('div'); d.textContent=s==null?'':String(s); return d.innerHTML; }
+function safeUrl(u){
+  try{ const x=new URL(u); if(x.protocol!=='https:' && x.protocol!=='blob:') return null;
+    if(x.protocol==='https:' && !/(\.supabase\.co|giphy\.com)$/.test(x.hostname)) return null; return x.href; }catch(e){ return null; }
+}
+function ago(iso){
+  const s=(Date.now()-new Date(iso).getTime())/1000;
+  if(s<60) return 'hace un momento';
+  if(s<3600) return 'hace '+Math.floor(s/60)+' min';
+  if(s<86400) return 'hace '+Math.floor(s/3600)+' h';
+  const d=Math.floor(s/86400); return d===1?'ayer':'hace '+d+' días';
+}
+function hash(str){ let h=0; for(const c of String(str)) h=(h*31+c.charCodeAt(0))|0; return Math.abs(h); }
+function setStatus(msg, err){ const el=$('form-status'); el.textContent=msg; el.classList.toggle('err', !!err); }
+function pad(n, w){ return String(n).padStart(w,'0'); }
+
+/* ---------- contador de visitas ---------- */
+function renderVisits(n){
+  $('visits').innerHTML = pad(Math.min(n,999999),6).split('').map(d=>'<span style="background: #000000; color: #39FF14; padding: 0 5px; border: 1px solid #555555">'+d+'</span>').join('');
+}
+
+/* ---------- ventanas ---------- */
+function win(title, body, opts={}){
+  const el=document.createElement('article');
+  el.className='win'+(opts.red?' red':'')+(opts.cls?' '+opts.cls:'');
+  el.style.transform='rotate('+(opts.rot||0)+'deg)';
+  el.innerHTML='<div class="win-title"><span>'+esc(title)+'</span><span class="win-btns" aria-hidden="true"><i></i><i></i><i></i></span></div><div class="win-body">'+body+'</div>';
+  return el;
+}
+function postEl(p, idx){
+  const h=hash(p.id);
+  const num=pad(idx,3);
+  const media=(p.media||[]).map(safeUrl).filter(Boolean);
+  const file = p.kind==='gif' ? 'gif_'+num+'.gif' : p.kind==='meme' ? 'meme_'+num+'.jpg' : media.length>1 ? 'fotos_'+num+'.zip' : media.length ? 'foto_'+num+'.jpg' : 'mensaje_'+num+'.txt';
+  let body='';
+  if(media.length){
+    const n=Math.min(media.length,6);
+    body+='<div class="media-grid n'+n+'">'+media.slice(0,6).map(u=>'<button type="button" data-zoom="'+esc(u)+'" aria-label="Ver imagen en grande"><img src="'+esc(u)+'" alt="'+(p.kind==='gif'?'GIF':p.kind==='meme'?'Meme':'Foto')+' de '+esc(p.name)+'" loading="lazy"></button>').join('')+'</div>';
+  }
+  if(p.message) body+='<p class="post-msg">'+esc(p.message)+'</p>';
+  body+='<div class="post-sig">&gt; '+esc(p.name)+'_</div><div class="post-time">'+ago(p.created_at)+'</div>';
+  return win(file, body, {red: h%3===0, rot: ((h%15)-7)/10});
+}
+function liveStats(){
+  const n=posts.length; if(n<3) return [];
+  const c={photo:0,meme:0,gif:0}; let fotos=0;
+  posts.forEach(p=>{ if(p.kind==='photo') fotos+=(p.media||[]).length; if(c[p.kind]!=null) c[p.kind]++; });
+  const txt=posts.map(p=>(p.message||'')).join(' ').toLowerCase();
+  const nac=posts.filter(p=>/nacional|criollo/i.test(p.message||'')).length;
+  const rm=posts.filter(p=>/madrid|merengue/i.test(p.message||'')).length;
+  const st=posts.filter(p=>/steeler/i.test(p.message||'')).length;
+  const words={}; (txt.match(/[a-záéíóúñü]{4,}/g)||[]).forEach(w=>{ if(!STOP.has(w)) words[w]=(words[w]||0)+1; });
+  const top=Object.entries(words).sort((a,b)=>b[1]-a[1])[0];
+  const hours={}; posts.forEach(p=>{ const h=new Date(p.created_at).getHours(); hours[h]=(hours[h]||0)+1; });
+  const ph=+Object.entries(hours).sort((a,b)=>b[1]-a[1])[0][0];
+  const hl=(ph%12||12)+(ph<12?' a. m.':' p. m.');
+  const out=['Hasta ahora: '+n+' mensajes · '+fotos+' fotos · '+c.meme+' memes · '+c.gif+' GIFs.'];
+  if(nac+rm+st>0) out.push('Invitados que mencionaron a El Nacional / Real Madrid / Steelers: '+nac+' / '+rm+' / '+st+'.');
+  if(top && top[1]>1) out.push('Palabra más usada en el muro: “'+top[0]+'” ('+top[1]+' veces).');
+  out.push('Hora pico de mensajes: '+hl+(ph>=22||ph<5?' (nadie duerme).':'.'));
+  return out;
+}
+function renderWall(){
+  const wall=$('wall'); wall.innerHTML='';
+  $('goal-count').textContent=posts.length;
+  if(!posts.length){
+    wall.appendChild(win('muro_vacio.txt','<p class="post-msg" style="font-family: Anton, Impact, sans-serif; font-size: 24px">EL MURO ESTÁ VACÍO</p><p class="post-msg">Sé el primero en anotar: escribe tu mensaje arriba y dale a ¡Gol!</p>',{cls:'empty'}));
+    return;
+  }
+  const stats=liveStats(); let fi=0, si=0, extra=0;
+  posts.forEach((p,i)=>{
+    wall.appendChild(postEl(p, posts.length-i));
+    if((i+1)%3===0){
+      extra++;
+      if(extra%3===0 && stats.length){
+        const t=stats[si++%stats.length];
+        wall.appendChild(win('estadistica_en_vivo.xls','<div class="fact-label">EN VIVO · ACTUALIZADO SOLO</div><p class="fact-text">'+esc(t)+'</p>',{cls:'stat',rot:0.4}));
+      } else {
+        const t=FACTS[fi%FACTS.length];
+        wall.appendChild(win(FACT_FILES[fi%FACT_FILES.length],'<div class="fact-label">DATO #'+pad(fi+1,3)+'</div><p class="fact-text">'+esc(t)+'</p>',{cls:'fact',red:fi%2===1,rot:fi%2?0.7:-0.6}));
+        fi++;
+      }
+    }
+  });
+}
+
+/* ---------- datos ---------- */
+async function loadPosts(){
+  if(DEMO){ posts=demoPosts.slice().sort((a,b)=>b.created_at.localeCompare(a.created_at)); renderWall(); return; }
+  const { data, error } = await db.rpc('get_posts', { p_pass: PASS });
+  if(error){ console.error(error); return; }
+  posts=data||[]; renderWall();
+}
+async function checkPass(p){
+  if(DEMO) return p.trim().toLowerCase()==='nachocampeon';
+  const { data, error } = await db.rpc('check_pass', { p_pass: p });
+  if(error) throw error; return data===true;
+}
+async function bumpVisits(){
+  if(DEMO){ renderVisits(29); return; }
+  const { data } = await db.rpc('bump_visit');
+  if(typeof data==='number') renderVisits(data);
+}
+
+/* ---------- entrada ---------- */
+async function enter(p, silent){
+  $('gate-btn').disabled=true; $('gate-msg').textContent='';
+  try{
+    if(await checkPass(p)){
+      PASS=p; try{ localStorage.setItem('wall_pass', p); }catch(e){}
+      $('gate').hidden=true; document.body.style.overflow='';
+      if(DEMO) $('demo-banner').hidden=false;
+      await Promise.all([loadPosts(), bumpVisits()]);
+      setInterval(loadPosts, 30000);
+    } else if(!silent){
+      $('gate-msg').textContent='Esa no es la contraseña. Revisa la invitación o pregúntale a quien te mandó el link.';
+    }
+  }catch(e){ console.error(e); $('gate-msg').textContent='No se pudo conectar con el muro. Revisa tu internet e inténtalo de nuevo.'; }
+  $('gate-btn').disabled=false;
+}
+$('gate-form').addEventListener('submit', e=>{ e.preventDefault(); enter($('gate-pass').value); });
+document.body.style.overflow='hidden';
+try{ const saved=localStorage.getItem('wall_pass'); if(saved) enter(saved, true); }catch(e){}
+setTimeout(()=>{ if(!$('gate').hidden) $('gate-pass').focus(); }, 50);
+
+/* ---------- adjuntos ---------- */
+let attach={ kind:'text', items:[] }; // items: {blob, url, type} o {gif:url}
+function renderAttach(){
+  const box=$('attach-preview');
+  if(!attach.items.length){ box.hidden=true; box.innerHTML=''; return; }
+  box.hidden=false;
+  box.innerHTML=attach.items.map((it,i)=>'<div class="attach-item"><img src="'+esc(it.url)+'" alt=""><button type="button" data-rm="'+i+'" aria-label="Quitar">x</button></div>').join('');
+}
+$('attach-preview').addEventListener('click', e=>{
+  const b=e.target.closest('[data-rm]'); if(!b) return;
+  const it=attach.items.splice(+b.dataset.rm,1)[0]; if(it && it.blob) URL.revokeObjectURL(it.url);
+  if(!attach.items.length) attach.kind='text'; renderAttach();
+});
+function clearAttach(){ attach.items.forEach(it=>it.blob&&URL.revokeObjectURL(it.url)); attach={kind:'text',items:[]}; renderAttach(); }
+
+async function shrink(file, max=1600){
+  if(file.type==='image/gif') return file;
+  const img=await new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=rej; i.src=URL.createObjectURL(file); });
+  const sc=Math.min(1, max/Math.max(img.naturalWidth,img.naturalHeight));
+  const c=document.createElement('canvas'); c.width=Math.round(img.naturalWidth*sc); c.height=Math.round(img.naturalHeight*sc);
+  const x=c.getContext('2d'); x.fillStyle='#FFFFFF'; x.fillRect(0,0,c.width,c.height); x.drawImage(img,0,0,c.width,c.height);
+  URL.revokeObjectURL(img.src);
+  return await new Promise(r=>c.toBlob(r,'image/jpeg',0.85));
+}
+function okFile(f){ if(!f.type.startsWith('image/')){ setStatus('Ese archivo no es una imagen. Elige una foto, meme o GIF.', true); return false; }
+  if(f.size>10*1024*1024){ setStatus('Esa imagen pesa más de 10 MB. Elige una más liviana.', true); return false; } return true; }
+
+$('btn-photos').addEventListener('click', ()=>$('file-photos').click());
+$('btn-meme').addEventListener('click', ()=>$('file-meme').click());
+$('file-photos').addEventListener('change', async e=>{
+  const files=[...e.target.files].filter(okFile); e.target.value='';
+  if(!files.length) return;
+  if(attach.kind!=='photo') clearAttach();
+  attach.kind='photo';
+  setStatus('Preparando fotos…');
+  for(const f of files.slice(0, 6-attach.items.length)){ const b=await shrink(f); attach.items.push({blob:b, url:URL.createObjectURL(b), type:b.type}); }
+  if(files.length+attach.items.length>6) setStatus('Máximo 6 fotos por mensaje.'); else setStatus('');
+  renderAttach();
+});
+$('file-meme').addEventListener('change', async e=>{
+  const f=e.target.files[0]; e.target.value=''; if(!f||!okFile(f)) return;
+  clearAttach(); const b=await shrink(f); attach={kind:f.type==='image/gif'?'gif':'meme', items:[{blob:b,url:URL.createObjectURL(b),type:b.type}]}; renderAttach(); setStatus('');
+});
+
+/* ---------- modales ---------- */
+let lastFocus=null;
+function openModal(id){ lastFocus=document.activeElement; $(id).hidden=false; const f=$(id).querySelector('input,button'); if(f) f.focus(); }
+function closeModal(el){ el.hidden=true; if(lastFocus) lastFocus.focus(); }
+document.addEventListener('click', e=>{
+  if(e.target.matches('[data-close]')) closeModal(e.target.closest('.overlay'));
+  else if(e.target.classList.contains('overlay') && e.target.id!=='gate') closeModal(e.target);
+  const z=e.target.closest('[data-zoom]');
+  if(z){ const lb=$('lightbox'); lb.querySelector('img').src=z.dataset.zoom; openModal('lightbox'); }
+});
+$('lightbox').addEventListener('click', ()=>closeModal($('lightbox')));
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') document.querySelectorAll('.overlay:not(#gate)').forEach(o=>{ if(!o.hidden) closeModal(o); }); });
+
+/* ---------- GIFs ---------- */
+if(!HAS_GIPHY) $('btn-gif').hidden=true;
+$('btn-gif').addEventListener('click', ()=>{ openModal('gif-modal'); if(!$('gif-results').children.length) searchGifs('feliz cumpleaños'); });
+$('gif-form').addEventListener('submit', e=>{ e.preventDefault(); searchGifs($('gif-q').value.trim()||'feliz cumpleaños'); });
+async function searchGifs(q){
+  $('gif-status').textContent='Buscando…'; $('gif-results').innerHTML='';
+  try{
+    const r=await fetch('https://api.giphy.com/v1/gifs/search?api_key='+encodeURIComponent(GIPHY_KEY)+'&q='+encodeURIComponent(q)+'&limit=24&rating=pg-13&lang=es');
+    const j=await r.json();
+    const items=(j.data||[]).map(g=>({thumb:g.images.fixed_width.url, full:(g.images.downsized_medium||g.images.original).url}));
+    $('gif-results').innerHTML=items.map(g=>'<button type="button" data-gif="'+esc(g.full)+'" data-thumb="'+esc(g.thumb)+'" aria-label="Elegir este GIF"><img src="'+esc(g.thumb)+'" alt="" loading="lazy"></button>').join('');
+    $('gif-status').textContent=items.length?'':'No hay GIFs para esa búsqueda. Prueba otra palabra.';
+  }catch(e){ $('gif-status').textContent='No se pudieron cargar los GIFs. Inténtalo de nuevo.'; }
+}
+$('gif-results').addEventListener('click', e=>{
+  const b=e.target.closest('[data-gif]'); if(!b) return;
+  clearAttach(); attach={kind:'gif', items:[{gif:b.dataset.gif, url:b.dataset.thumb}]}; renderAttach(); closeModal($('gif-modal')); setStatus('');
+});
+
+/* ---------- creador de memes ---------- */
+const TEMPLATES=['hat_original.png','hat_rojo.png','hat_azul.png','hat_amarillo.png','hat_rosa.png','hat_blanco.png','twenty_nine.png','sticker_dog.png'];
+let tplImg=null;
+$('tpl-row').innerHTML='<button type="button" id="tpl-upload" aria-label="Subir tu propia imagen" style="display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;text-align:center">Subir<br>imagen</button>'+TEMPLATES.map((t,i)=>'<button type="button" data-tpl="images/'+t+'" aria-pressed="'+(i===0)+'" aria-label="Plantilla '+(i+1)+'"><img src="images/'+t+'" alt=""></button>').join('');
+function loadTpl(src){ const i=new Image(); i.onload=()=>{ tplImg=i; drawMeme(); }; i.src=src; }
+$('tpl-row').addEventListener('click', e=>{
+  if(e.target.closest('#tpl-upload')){ $('file-tpl').click(); return; }
+  const b=e.target.closest('[data-tpl]'); if(!b) return;
+  $('tpl-row').querySelectorAll('[data-tpl]').forEach(x=>x.setAttribute('aria-pressed', x===b)); loadTpl(b.dataset.tpl);
+});
+$('file-tpl').addEventListener('change', e=>{ const f=e.target.files[0]; e.target.value=''; if(f&&f.type.startsWith('image/')){ $('tpl-row').querySelectorAll('[data-tpl]').forEach(x=>x.setAttribute('aria-pressed','false')); loadTpl(URL.createObjectURL(f)); }});
+function memeText(ctx, text, y, fromTop){
+  text=text.toUpperCase().trim(); if(!text) return;
+  let size=86; const W=800, maxW=740;
+  const lines=()=>{ ctx.font=size+'px Anton, Impact, sans-serif'; const words=text.split(/\s+/); const out=[]; let cur='';
+    words.forEach(w=>{ const t=cur?cur+' '+w:w; if(ctx.measureText(t).width>maxW && cur){ out.push(cur); cur=w; } else cur=t; }); if(cur) out.push(cur); return out; };
+  let ls=lines(); while((ls.length>2 || ls.some(l=>ctx.measureText(l).width>maxW)) && size>36){ size-=6; ls=lines(); }
+  ctx.textAlign='center'; ctx.lineJoin='round'; ctx.lineWidth=size/7; ctx.strokeStyle='#000'; ctx.fillStyle='#FFF';
+  const lh=size*1.08; const start = fromTop ? y+size : y-(ls.length-1)*lh;
+  ls.forEach((l,i)=>{ ctx.strokeText(l,W/2,start+i*lh); ctx.fillText(l,W/2,start+i*lh); });
+}
+function drawMeme(){
+  const c=$('meme-canvas'), x=c.getContext('2d');
+  x.fillStyle='#BFE0F5'; x.fillRect(0,0,800,800);
+  if(tplImg){
+    const r=tplImg.naturalWidth/tplImg.naturalHeight; const transparent=/hat_|sticker_/.test(tplImg.src);
+    let w,h; if(transparent){ h=620; w=h*r; if(w>700){ w=700; h=w/r; } } else { if(r>1){ h=800; w=h*r; } else { w=800; h=w/r; } }
+    x.drawImage(tplImg,(800-w)/2, transparent?(800-h)/2+20:(800-h)/2, w, h);
+  }
+  memeText(x,$('meme-top').value,14,true);
+  memeText(x,$('meme-bottom').value,770,false);
+}
+['meme-top','meme-bottom'].forEach(id=>$(id).addEventListener('input', drawMeme));
+$('btn-maker').addEventListener('click', async ()=>{ openModal('maker-modal'); try{ await document.fonts.load('86px Anton'); }catch(e){} if(!tplImg) loadTpl('images/'+TEMPLATES[0]); else drawMeme(); });
+$('maker-use').addEventListener('click', ()=>{
+  if(!$('meme-top').value.trim() && !$('meme-bottom').value.trim()){ $('meme-top').focus(); return; }
+  try{
+    $('meme-canvas').toBlob(b=>{ clearAttach(); attach={kind:'meme', items:[{blob:b,url:URL.createObjectURL(b),type:'image/jpeg'}]}; renderAttach(); closeModal($('maker-modal')); setStatus('Meme listo. Escribe tu nombre y dale a ¡Gol!'); }, 'image/jpeg', 0.9);
+  }catch(e){ console.error(e); closeModal($('maker-modal')); setStatus('No se pudo crear el meme. Prueba con otra imagen.', true); }
+});
+
+/* ---------- publicar ---------- */
+async function upload(blob){
+  const ext = blob.type==='image/gif' ? 'gif' : blob.type==='image/png' ? 'png' : 'jpg';
+  const path = new Date().toISOString().slice(0,10)+'/'+Date.now()+'-'+Math.random().toString(36).slice(2,8)+'.'+ext;
+  const { error } = await db.storage.from('wall').upload(path, blob, { contentType: blob.type||'image/jpeg', cacheControl: '31536000', upsert: false });
+  if(error) throw error;
+  return db.storage.from('wall').getPublicUrl(path).data.publicUrl;
+}
+$('btn-send').addEventListener('click', async ()=>{
+  const name=$('a-name').value.trim(); const msg=$('a-msg').value.trim();
+  if(!name){ setStatus('Escribe tu nombre para firmar el muro.', true); $('a-name').focus(); return; }
+  if(!msg && !attach.items.length){ setStatus('Escribe un mensaje o agrega una foto, meme o GIF.', true); $('a-msg').focus(); return; }
+  const btn=$('btn-send'); btn.disabled=true; btn.textContent='Subiendo…'; setStatus('Subiendo…');
+  try{
+    let media=[];
+    if(DEMO){ media=attach.items.map(it=>it.gif||it.url); }
+    else{
+      for(const it of attach.items){ media.push(it.gif ? it.gif : await upload(it.blob)); }
+    }
+    const kind=attach.items.length?attach.kind:'text';
+    if(DEMO){ demoPosts.push({id:String(Math.random()), created_at:new Date().toISOString(), name, message:msg, kind, media}); }
+    else{
+      const { error } = await db.rpc('add_post', { p_pass: PASS, p_name: name, p_message: msg, p_kind: kind, p_media: media });
+      if(error) throw error;
+    }
+    $('a-msg').value=''; if(!DEMO) clearAttach(); else attach={kind:'text',items:[]}; renderAttach();
+    setStatus('¡Gol! Tu mensaje ya está en el muro.');
+    try{ localStorage.setItem('wall_name', name); }catch(e){}
+    await loadPosts();
+    $('wall').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth', block:'start'});
+  }catch(e){ console.error(e); setStatus('No se pudo publicar. Revisa tu conexión e inténtalo de nuevo.', true); }
+  btn.disabled=false; btn.textContent='¡Gol!';
+});
+try{ const n=localStorage.getItem('wall_name'); if(n) $('a-name').value=n; }catch(e){}
+</script>
+</body>
+</html>
