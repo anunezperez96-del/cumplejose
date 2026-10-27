@@ -92,6 +92,35 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
 .gate-face{display:block;height:180px;margin:0 auto -6px}
 .gate-title{margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:44px;line-height:1;color:#D71920;text-shadow:2px 2px 0 #FFFFFF,4px 4px 0 #0033A0;text-align:center}
 
+.stk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}
+.stk-grid button{all:unset;display:block;cursor:pointer;padding:4px;border-radius:12px}
+.stk-grid button:hover{background:#E8F3FB}
+.stk-grid button:focus-visible{outline:3px solid #D71920}
+.stk-grid img{width:100%;height:auto;display:block}
+.win{position:relative}
+.post-stk{position:absolute;top:-30px;right:-18px;width:110px;height:auto;pointer-events:none;z-index:2}
+.has-stk .post-msg{padding-right:64px}
+.stk-solo{display:block;width:min(220px,80%);height:auto;margin:0 auto}
+.player{width:100%;max-width:280px;background:linear-gradient(160deg,#2B4C93,#1F3A73 55%,#14294F);border-radius:26px;padding:16px 14px 14px;box-shadow:inset 0 2px 0 rgba(255,255,255,.25),4px 6px 0 rgba(0,0,0,.25);border:3px solid #111111;display:flex;flex-direction:column;gap:12px}
+.player-brand{font-family:Anton,Impact,sans-serif;color:#F2C230;font-size:18px;letter-spacing:2px;text-align:center}
+.player-brand span{color:#FFFFFF;background:#D71920;padding:0 6px;border-radius:4px;margin-left:4px}
+.player-screen{background:#C9E3B5;border:3px solid #0E1F45;border-radius:10px;padding:10px;font-family:VT323,monospace;color:#1B2B12;box-shadow:inset 0 0 12px rgba(0,0,0,.25)}
+.player-now{font-size:15px}
+.player-title{font-size:26px;line-height:1;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.player-artist{font-size:18px}
+.player-bar{height:8px;border:2px solid #1B2B12;margin:6px 0;background:#B3D39C}
+.player-bar span{display:block;height:100%;width:0;background:#1B2B12;transition:width .5s linear}
+.player-list{list-style:none;margin:0;padding:0;border-top:2px dashed #1B2B12}
+.player-list button{all:unset;cursor:pointer;display:block;width:100%;box-sizing:border-box;padding:6px 2px;font-family:VT323,monospace;font-size:19px;line-height:1.1;color:#1B2B12}
+.player-list button span{opacity:.7}
+.player-list button[aria-current="true"]{background:#1B2B12;color:#C9E3B5}
+.player-list button:focus-visible{outline:2px solid #D71920}
+.player-controls{display:flex;justify-content:center;align-items:center;gap:14px}
+.pbtn{width:48px;height:48px;border-radius:50%;border:3px solid #111111;background:#F2C230;color:#111111;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 0 #111111}
+.pbtn.play{width:68px;height:68px;background:#D71920;color:#FFFFFF;font-size:24px}
+.pbtn:active{transform:translateY(3px);box-shadow:0 1px 0 #111111}
+.pbtn:focus-visible{outline:3px solid #FFFFFF;outline-offset:2px}
+.player-embed{border-radius:12px;overflow:hidden;background:#111111;min-height:80px}
 .gif-cats{display:flex;flex-wrap:wrap;gap:6px}
 .gif-cats button{font:inherit;font-size:13px;font-weight:700;padding:8px 10px;min-height:40px;background:#FFFFFF;color:#111111;border:2px solid #111111;border-radius:999px}
 .gif-cats button[aria-pressed="true"]{background:#0033A0;color:#FFFFFF;border-color:#0033A0}
@@ -199,12 +228,12 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
   </section>
 
   <section aria-label="Estadísticas de Jose Maria" style="position: relative; z-index: 2; max-width: 1180px; margin: 32px auto 0; padding: 0 24px">
-    <div style="background: #111111; color: #FFFFFF; border: 3px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; box-shadow: 4px 4px 0 #D71920; padding: 12px 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px 20px; align-items: center">
-      <div style="display: flex; gap: 10px; align-items: center"><svg viewBox="0 0 160 160" width="46" height="46" role="img" aria-label="Deportes 40 por ciento, correr 25, SNL 20, The Wombats 15"><g transform="rotate(-90 80 80)"><circle cx="80" cy="80" r="60" fill="none" stroke="#D71920" stroke-width="34" stroke-dasharray="150.8 377"></circle><circle cx="80" cy="80" r="60" fill="none" stroke="#3E73D6" stroke-width="34" stroke-dasharray="94.2 377" stroke-dashoffset="-150.8"></circle><circle cx="80" cy="80" r="60" fill="none" stroke="#FFFFFF" stroke-width="34" stroke-dasharray="75.4 377" stroke-dashoffset="-245"></circle><circle cx="80" cy="80" r="60" fill="none" stroke="#FFE14D" stroke-width="34" stroke-dasharray="56.5 377" stroke-dashoffset="-320.4"></circle></g></svg><div style="font-size: 12px; line-height: 1.35; font-weight: 700"><span style="font-family: Anton, Impact, sans-serif; font-size: 15px; font-weight: 400">DE QUÉ ESTÁ HECHO JOSE</span><br>Deportes · Correr · Ecuador</div></div>
-      <div style="display: flex; gap: 10px; align-items: center"><div style="font-family: VT323, monospace; font-size: 44px; line-height: 1; color: #FFE14D">29</div><div style="font-size: 12px; line-height: 1.35; font-weight: 700">vueltas al sol<br>(datos verificados)</div></div>
-      <div style="display: flex; gap: 10px; align-items: center"><div style="font-family: VT323, monospace; font-size: 44px; line-height: 1; color: #FF6B70">100%</div><div style="font-size: 12px; line-height: 1.35; font-weight: 700">El Nacional, estadísticamente significativo</div></div>
-      <div style="display: flex; gap: 10px; align-items: center"><div style="font-family: VT323, monospace; font-size: 44px; line-height: 1; color: #7FD1FF">97%</div><div style="font-size: 12px; line-height: 1.35; font-weight: 700">probabilidad de hablar de fútbol esta noche</div></div>
-      <div style="display: flex; gap: 10px; align-items: center"><div style="font-family: VT323, monospace; font-size: 44px; line-height: 1; color: #FFFFFF">NYC</div><div style="font-size: 12px; line-height: 1.35; font-weight: 700">sede de la fiesta<br>29 oct</div></div>
+    <div style="background: #FFFFFF; color: #111111; border: 3px solid #111111; box-shadow: 4px 4px 0 #D71920; padding: 12px 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px 20px; align-items: center">
+      <div style="display: flex; gap: 10px; align-items: center"><svg viewBox="0 0 160 160" width="46" height="46" role="img" aria-label="Deportes 40 por ciento, correr 25, SNL 20, The Wombats 15"><g transform="rotate(-90 80 80)"><circle cx="80" cy="80" r="60" fill="none" stroke="#D71920" stroke-width="34" stroke-dasharray="150.8 377"></circle><circle cx="80" cy="80" r="60" fill="none" stroke="#3E73D6" stroke-width="34" stroke-dasharray="94.2 377" stroke-dashoffset="-150.8"></circle><circle cx="80" cy="80" r="60" fill="none" stroke="#7FB2E5" stroke-width="34" stroke-dasharray="75.4 377" stroke-dashoffset="-245"></circle><circle cx="80" cy="80" r="60" fill="none" stroke="#FFE14D" stroke-width="34" stroke-dasharray="56.5 377" stroke-dashoffset="-320.4"></circle></g></svg><div style="font-size: 12px; line-height: 1.35; font-weight: 700"><span style="font-family: Anton, Impact, sans-serif; font-size: 15px; font-weight: 400">DE QUÉ ESTÁ HECHO JOSE</span><br>Deportes · Correr · Ecuador</div></div>
+      <div style="display: flex; gap: 10px; align-items: center"><div style="font-family: VT323, monospace; font-size: 44px; line-height: 1; color: #0033A0">29</div><div style="font-size: 12px; line-height: 1.35; font-weight: 700">vueltas al sol<br>(datos verificados)</div></div>
+      <div style="display: flex; gap: 10px; align-items: center"><div style="font-family: VT323, monospace; font-size: 44px; line-height: 1; color: #D71920">100%</div><div style="font-size: 12px; line-height: 1.35; font-weight: 700">El Nacional, estadísticamente significativo</div></div>
+      <div style="display: flex; gap: 10px; align-items: center"><div style="font-family: VT323, monospace; font-size: 44px; line-height: 1; color: #0B7F70">97%</div><div style="font-size: 12px; line-height: 1.35; font-weight: 700">probabilidad de hablar de fútbol esta noche</div></div>
+      <div style="display: flex; gap: 10px; align-items: center"><div style="font-family: VT323, monospace; font-size: 44px; line-height: 1; color: #111111">NYC</div><div style="font-size: 12px; line-height: 1.35; font-weight: 700">sede de la fiesta<br>29 oct</div></div>
     </div>
   </section>
 
@@ -232,6 +261,7 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
           <button type="button" id="btn-photos" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Subir fotos</button>
           <button type="button" id="btn-meme" hidden style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Subir meme</button>
           <button type="button" id="btn-gif" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">GIFs</button>
+          <button type="button" id="btn-stk" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Stickers</button>
           <button type="button" id="btn-maker" hidden style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF">Memes listos</button>
           <button type="button" id="btn-send" style="font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; background: #C0C0C0; color: #111111; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; margin-left: auto; background: #D71920; color: #FFFFFF; border-color: #FF8A8E #5A080B #5A080B #FF8A8E">¡Gol!</button>
         </div>
@@ -252,7 +282,27 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
           <div aria-hidden="true" style="position: absolute; top: -14px; left: 50%; width: 90px; height: 24px; margin-left: -45px; background: rgba(255,225,77,0.8); transform: rotate(-3deg); z-index: 2"></div>
           <img src="images/twenty_nine.png" alt="Tarjeta de cumpleaños Twenty Nine estilo New Girl" style="display: block; width: 100%; height: auto">
         </div>
-        <article style="background: #C0C0C0; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; padding: 3px; box-shadow: 4px 4px 0 rgba(0,0,0,0.25); transform: rotate(0.6deg)"><div style="background: linear-gradient(90deg, #0033A0, #3E73D6); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center"><span>marcador_de_jose.exe</span><span aria-hidden="true" style="display: flex; gap: 2px"><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; color: #111111; font-size: 11px; line-height: 12px; text-align: center">x</span></span></div><div style="background: #111111; color: #FFFFFF; padding: 14px; display: flex; flex-direction: column; gap: 10px"><div style="font-family: Anton, Impact, sans-serif; font-size: 24px; color: #FFE14D">MARCADOR DE JOSE</div><div id="scores-body" style="display: flex; flex-direction: column; gap: 12px; font-size: 13px">Cargando resultados…</div><div id="mood" style="border-top: 2px dashed #555555; padding-top: 10px"></div><div style="font-size: 10px; color: #AAAAAA">Datos: TheSportsDB</div></div></article>
+        <article id="radio" style="background: #C0C0C0; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; padding: 3px; box-shadow: 4px 4px 0 rgba(0,0,0,0.25); transform: rotate(-0.5deg)"><div style="background: linear-gradient(90deg, #0033A0, #3E73D6); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center"><span>radio_jose.exe</span><span aria-hidden="true" style="display: flex; gap: 2px"><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; color: #111111; font-size: 11px; line-height: 12px; text-align: center">x</span></span></div><div style="background: #FFFFFF; padding: 14px; display: flex; flex-direction: column; align-items: center; gap: 10px">
+<div style="font-family: Anton, Impact, sans-serif; font-size: 24px; color: #D71920; align-self: flex-start">LA PLAYLIST DEL CUMPLE</div>
+<div class="player">
+  <div class="player-brand">JOSE·FM <span>29</span></div>
+  <div class="player-screen">
+    <div class="player-now">♪ AHORA SUENA</div>
+    <div class="player-title" id="pl-title">Stand By Me</div>
+    <div class="player-artist" id="pl-artist">Oasis</div>
+    <div class="player-bar"><span id="pl-bar"></span></div>
+    <ol class="player-list" id="pl-list"></ol>
+  </div>
+  <div class="player-controls">
+    <button type="button" class="pbtn" id="pl-prev" aria-label="Canción anterior">⏮</button>
+    <button type="button" class="pbtn play" id="pl-play" aria-label="Reproducir">▶</button>
+    <button type="button" class="pbtn" id="pl-next" aria-label="Siguiente canción">⏭</button>
+  </div>
+  <div class="player-embed"><div id="spotify-embed"></div></div>
+</div>
+<div style="font-size: 12px; color: #555555; text-align: center">Dale play mientras escribes tu mensaje. Con sesión de Spotify suenan completas; sin sesión, 30 segundos.</div>
+</div></article>
+        <article style="background: #C0C0C0; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; padding: 3px; box-shadow: 4px 4px 0 rgba(0,0,0,0.25); transform: rotate(0.6deg)"><div style="background: linear-gradient(90deg, #0033A0, #3E73D6); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center"><span>marcador_de_jose.exe</span><span aria-hidden="true" style="display: flex; gap: 2px"><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; color: #111111; font-size: 11px; line-height: 12px; text-align: center">x</span></span></div><div style="background: #FFFFFF; color: #111111; padding: 14px; display: flex; flex-direction: column; gap: 10px"><div style="font-family: Anton, Impact, sans-serif; font-size: 24px; color: #0033A0">MARCADOR DE JOSE</div><div id="scores-body" style="display: flex; flex-direction: column; gap: 12px; font-size: 13px">Cargando resultados…</div><div id="mood" style="border-top: 2px dashed #999999; padding-top: 10px"></div><div style="font-size: 10px; color: #666666">Datos: TheSportsDB</div></div></article>
         <article style="background: #C0C0C0; border: 2px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; padding: 3px; box-shadow: 4px 4px 0 rgba(0,0,0,0.25); transform: rotate(-1deg)"><div style="background: linear-gradient(90deg, #0033A0, #3E73D6); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center"><span>estadisticas.xls</span><span aria-hidden="true" style="display: flex; gap: 2px"><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF"></span><span style="width: 16px; height: 14px; background: #C0C0C0; border: 1px solid; border-color: #FFFFFF #404040 #404040 #FFFFFF; color: #111111; font-size: 11px; line-height: 12px; text-align: center">x</span></span></div><div style="background: #FFFFFF; padding: 14px">
 <div style="font-family: Anton, Impact, sans-serif; font-size: 22px">DE QUÉ ESTÁ HECHO JOSE</div>
 <div style="display: flex; gap: 14px; align-items: center; margin-top: 10px">
@@ -326,6 +376,18 @@ button:active:not(:disabled){border-color:#404040 #FFFFFF #FFFFFF #404040 !impor
   </div>
 </div>
 
+<!-- Stickers de Jose -->
+<div id="stk-modal" class="overlay" role="dialog" aria-modal="true" aria-labelledby="stk-title" hidden>
+  <div class="win">
+    <div class="win-title"><span id="stk-title">stickers_de_jose.exe</span><button type="button" class="x-btn" data-close aria-label="Cerrar">x</button></div>
+    <div class="win-body">
+      <div style="font-family: Anton, Impact, sans-serif; font-size: 22px">ELIGE UN STICKER</div>
+      <div style="font-size: 13px; margin-top: -6px">Se pega en la esquina de tu mensaje. Uno por mensaje.</div>
+      <div id="stk-grid" class="stk-grid"></div>
+    </div>
+  </div>
+</div>
+
 <!-- Creador de memes -->
 <div id="maker-modal" class="overlay" role="dialog" aria-modal="true" aria-labelledby="maker-title" hidden>
   <div class="win">
@@ -391,8 +453,8 @@ const STOP = new Set('para pero como esta este esto todo todos todas tiene tiene
 /* ---------- utilidades ---------- */
 function esc(s){ const d=document.createElement('div'); d.textContent=s==null?'':String(s); return d.innerHTML; }
 function safeUrl(u){
-  try{ const x=new URL(u); if(x.protocol!=='https:' && x.protocol!=='blob:') return null;
-    if(x.protocol==='https:' && !/(\.supabase\.co|giphy\.com)$/.test(x.hostname)) return null; return x.href; }catch(e){ return null; }
+  try{ const x=new URL(u); if(x.origin===location.origin) return x.href; if(x.protocol!=='https:' && x.protocol!=='blob:') return null;
+    if(x.protocol==='https:' && !/(\.supabase\.co|giphy\.com)$/.test(x.hostname) && x.hostname!==location.hostname) return null; return x.href; }catch(e){ return null; }
 }
 function ago(iso){
   const s=(Date.now()-new Date(iso).getTime())/1000;
@@ -421,7 +483,9 @@ function win(title, body, opts={}){
 function postEl(p, idx){
   const h=hash(p.id);
   const num=pad(idx,3);
-  const media=(p.media||[]).map(safeUrl).filter(Boolean);
+  const all=(p.media||[]).map(safeUrl).filter(Boolean);
+  const stk=all.filter(u=>/\/images\/(stk|foto)_\d+\.png/.test(u));
+  const media=all.filter(u=>!stk.includes(u));
   const file = p.kind==='gif' ? 'gif_'+num+'.gif' : p.kind==='meme' ? 'meme_'+num+'.jpg' : media.length>1 ? 'fotos_'+num+'.zip' : media.length ? 'foto_'+num+'.jpg' : 'mensaje_'+num+'.txt';
   let body='';
   if(media.length){
@@ -429,8 +493,11 @@ function postEl(p, idx){
     body+='<div class="media-grid n'+n+'">'+media.slice(0,6).map(u=>'<button type="button" data-zoom="'+esc(u)+'" aria-label="Ver imagen en grande"><img src="'+esc(u)+'" alt="'+(p.kind==='gif'?'GIF':p.kind==='meme'?'Meme':'Foto')+' de '+esc(p.name)+'" loading="lazy"></button>').join('')+'</div>';
   }
   if(p.message) body+='<p class="post-msg">'+esc(p.message)+'</p>';
+  if(stk.length && !media.length && !p.message) body+='<img class="stk-solo" src="'+esc(stk[0])+'" alt="Sticker de Jose">';
   body+='<div class="post-sig">&gt; '+esc(p.name)+'_</div><div class="post-time">'+ago(p.created_at)+'</div>';
-  return win(file, body, {red: h%3===0, rot: ((h%15)-7)/10});
+  const el=win(stk.length&&!media.length&&!p.message?'sticker_'+num+'.png':file, body, {red: h%3===0, rot: ((h%15)-7)/10});
+  if(stk.length && (media.length || p.message)){ const s=document.createElement('img'); s.className='post-stk'; s.src=stk[0]; s.alt='Sticker de Jose'; s.style.transform='rotate('+((h%20)-4)+'deg)'; el.appendChild(s); el.classList.add('has-stk'); }
+  return el;
 }
 function liveStats(){
   const n=posts.length; if(n<3) return [];
@@ -516,13 +583,16 @@ setTimeout(()=>{ if(!$('gate').hidden) $('gate-pass').focus(); }, 50);
 
 /* ---------- adjuntos ---------- */
 let attach={ kind:'text', items:[] }; // items: {blob, url, type} o {gif:url}
+let sticker=null;
 function renderAttach(){
   const box=$('attach-preview');
-  if(!attach.items.length){ box.hidden=true; box.innerHTML=''; return; }
+  if(!attach.items.length && !sticker){ box.hidden=true; box.innerHTML=''; return; }
   box.hidden=false;
-  box.innerHTML=attach.items.map((it,i)=>'<div class="attach-item"><img src="'+esc(it.url)+'" alt=""><button type="button" data-rm="'+i+'" aria-label="Quitar">x</button></div>').join('');
+  box.innerHTML=attach.items.map((it,i)=>'<div class="attach-item"><img src="'+esc(it.url)+'" alt=""><button type="button" data-rm="'+i+'" aria-label="Quitar">x</button></div>').join('')
+    +(sticker?'<div class="attach-item" style="background: transparent"><img src="'+esc(sticker)+'" alt="Sticker elegido" style="object-fit: contain"><button type="button" data-rmstk aria-label="Quitar sticker">x</button></div>':'');
 }
 $('attach-preview').addEventListener('click', e=>{
+  if(e.target.closest('[data-rmstk]')){ sticker=null; renderAttach(); return; }
   const b=e.target.closest('[data-rm]'); if(!b) return;
   const it=attach.items.splice(+b.dataset.rm,1)[0]; if(it && it.blob) URL.revokeObjectURL(it.url);
   if(!attach.items.length) attach.kind='text'; renderAttach();
@@ -641,6 +711,16 @@ $('gif-results').addEventListener('click', e=>{
   clearAttach(); attach={kind:'gif', items:[{gif:b.dataset.gif, url:b.dataset.thumb}]}; renderAttach(); closeModal($('gif-modal')); setStatus('');
 });
 
+/* ---------- stickers ---------- */
+const STICKERS=Array.from({length:12},(_,i)=>'images/foto_'+String(i+1).padStart(2,'0')+'.png');
+$('stk-grid').innerHTML=STICKERS.map(s=>'<button type="button" data-stk="'+s+'" aria-label="Elegir sticker"><img src="'+s+'" alt="" loading="lazy"></button>').join('');
+$('btn-stk').addEventListener('click', ()=>openModal('stk-modal'));
+$('stk-grid').addEventListener('click', e=>{
+  const b=e.target.closest('[data-stk]'); if(!b) return;
+  sticker=new URL(b.dataset.stk, location.href).href; renderAttach(); closeModal($('stk-modal'));
+  setStatus('Sticker listo. Escribe tu mensaje (o no) y dale a ¡Gol!');
+});
+
 /* ---------- creador de memes ---------- */
 const TEMPLATES=['hat_original.png','hat_rojo.png','hat_azul.png','hat_amarillo.png','hat_rosa.png','hat_blanco.png','twenty_nine.png'];
 let tplImg=null;
@@ -728,7 +808,7 @@ async function upload(blob){
 $('btn-send').addEventListener('click', async ()=>{
   const name=$('a-name').value.trim(); const msg=$('a-msg').value.trim();
   if(!name){ setStatus('Escribe tu nombre para firmar el muro.', true); $('a-name').focus(); return; }
-  if(!msg && !attach.items.length){ setStatus('Escribe un mensaje o agrega una foto, meme o GIF.', true); $('a-msg').focus(); return; }
+  if(!msg && !attach.items.length && !sticker){ setStatus('Escribe un mensaje o agrega una foto, un GIF o un sticker.', true); $('a-msg').focus(); return; }
   const btn=$('btn-send'); btn.disabled=true; btn.textContent='Subiendo…'; setStatus('Subiendo…');
   try{
     let media=[];
@@ -736,13 +816,14 @@ $('btn-send').addEventListener('click', async ()=>{
     else{
       for(const it of attach.items){ media.push(it.gif ? it.gif : await upload(it.blob)); }
     }
+    if(sticker) media.push(sticker);
     const kind=attach.items.length?attach.kind:'text';
     if(DEMO){ demoPosts.push({id:String(Math.random()), created_at:new Date().toISOString(), name, message:msg, kind, media}); }
     else{
       const { error } = await db.rpc('add_post', { p_pass: PASS, p_name: name, p_message: msg, p_kind: kind, p_media: media });
       if(error) throw error;
     }
-    $('a-msg').value=''; if(!DEMO) clearAttach(); else attach={kind:'text',items:[]}; renderAttach();
+    $('a-msg').value=''; if(!DEMO) clearAttach(); else attach={kind:'text',items:[]}; sticker=null; renderAttach();
     setStatus('¡Gol! Tu mensaje ya está en el muro.');
     try{ localStorage.setItem('wall_name', name); }catch(e){}
     await loadPosts();
@@ -770,27 +851,63 @@ async function loadScores(){
     let last=null, next=null;
     try{ const d=await sdb('eventslast.php?id='+tm.id); const ev=(d.results||[]).filter(e=>e.intHomeScore!=null&&e.intHomeScore!=='').sort((a,b)=>(b.dateEvent||'').localeCompare(a.dateEvent||'')); last=ev[0]||null; }catch(e){}
     try{ const d=await sdb('eventsnext.php?id='+tm.id); const ev=(d.events||[]).sort((a,b)=>(a.dateEvent||'').localeCompare(b.dateEvent||'')); next=ev[0]||null; }catch(e){}
-    let line='<span style="color: #AAAAAA">Sin resultados recientes</span>';
+    let line='<span style="color: #555555">Sin resultados recientes</span>';
     if(last){
       const home=last.idHomeTeam===tm.id; const us=+(home?last.intHomeScore:last.intAwayScore), them=+(home?last.intAwayScore:last.intHomeScore);
       const opp=home?last.strAwayTeam:last.strHomeTeam;
-      const res=us>them?['G','#39FF14']:us<them?['P','#FF6B70']:['E','#FFE14D'];
+      const res=us>them?['G','#2BB54A']:us<them?['P','#FF6B70']:['E','#FFE14D'];
       pts+= us>them?1:us===them?0.5:0; n++;
-      line='<span style="display: inline-block; min-width: 20px; text-align: center; background: '+res[1]+'; color: #111111; font-weight: 700; margin-right: 6px">'+res[0]+'</span><span style="font-family: VT323, monospace; font-size: 22px">'+us+'–'+them+'</span> vs. '+esc(opp)+' <span style="color: #AAAAAA">· '+fmtDate(last.dateEvent)+'</span>';
+      line='<span style="display: inline-block; min-width: 20px; text-align: center; background: '+res[1]+'; color: #111111; font-weight: 700; margin-right: 6px">'+res[0]+'</span><span style="font-family: VT323, monospace; font-size: 22px">'+us+'–'+them+'</span> vs. '+esc(opp)+' <span style="color: #555555">· '+fmtDate(last.dateEvent)+'</span>';
     }
-    const nx=next?'<div style="color: #AAAAAA; margin-top: 2px">Próximo: '+esc(next.idHomeTeam===tm.id?next.strAwayTeam:next.strHomeTeam)+' · '+fmtDate(next.dateEvent)+'</div>':'';
+    const nx=next?'<div style="color: #555555; margin-top: 2px">Próximo: '+esc(next.idHomeTeam===tm.id?next.strAwayTeam:next.strHomeTeam)+' · '+fmtDate(next.dateEvent)+'</div>':'';
     rows.push('<div><div style="font-family: Anton, Impact, sans-serif; font-size: 16px; letter-spacing: 1px">'+tm.name+'</div><div>'+line+'</div>'+nx+'</div>');
   }
   box.innerHTML=rows.join('');
   if(n){
     const pct=Math.round(100*pts/n);
     const msg=pct>=80?['😁','Hoy invita él.']:pct>=50?['🙂','Buen día para pedirle favores.']:pct>20?['😐','Háblale de datos, no de fútbol.']:['😡','Mejor no le hables de fútbol hoy.'];
-    $('mood').innerHTML='<div style="font-size: 12px; font-weight: 700; color: #AAAAAA">ÍNDICE DE HUMOR DE JOSE</div><div style="font-family: VT323, monospace; font-size: 34px; line-height: 1.1">'+msg[0]+' '+pct+' %</div><div style="font-size: 13px">'+msg[1]+'</div>';
+    $('mood').innerHTML='<div style="font-size: 12px; font-weight: 700; color: #555555">ÍNDICE DE HUMOR DE JOSE</div><div style="font-family: VT323, monospace; font-size: 34px; line-height: 1.1">'+msg[0]+' '+pct+' %</div><div style="font-size: 13px">'+msg[1]+'</div>';
   } else {
     $('mood').innerHTML='<div style="font-size: 13px">Índice de humor: calculando… (vuelve más tarde)</div>';
   }
 }
 loadScores();
+
+/* ---------- reproductor JOSE·FM (Spotify) ---------- */
+const TRACKS=[
+  {id:'0zxHSBTEKdH8CI3auJ7Jyc', title:'Stand By Me', artist:'Oasis'},
+  {id:'0dVFOYHoc6BsEYBladgnhd', title:'Moving to New York', artist:'The Wombats'},
+  {id:'5ykbOijJEfRhuo2Td1m0Qd', title:'7', artist:'Catfish and the Bottlemen'}
+];
+let plIdx=0, plCtrl=null, plPaused=true;
+function plShow(){
+  $('pl-title').textContent=TRACKS[plIdx].title; $('pl-artist').textContent=TRACKS[plIdx].artist;
+  $('pl-list').innerHTML=TRACKS.map((t,i)=>'<li><button type="button" data-tr="'+i+'" aria-current="'+(i===plIdx)+'">'+(i===plIdx?'▶ ':'')+esc(t.title)+' <span>· '+esc(t.artist)+'</span></button></li>').join('');
+  $('pl-play').textContent=plPaused?'▶':'❚❚'; $('pl-play').setAttribute('aria-label', plPaused?'Reproducir':'Pausar');
+}
+function plLoad(i, play){
+  plIdx=(i+TRACKS.length)%TRACKS.length; $('pl-bar').style.width='0%'; plShow();
+  if(plCtrl){ plCtrl.loadUri('spotify:track:'+TRACKS[plIdx].id); if(play) setTimeout(()=>plCtrl.play(),400); }
+}
+$('pl-list').addEventListener('click', e=>{ const b=e.target.closest('[data-tr]'); if(b) plLoad(+b.dataset.tr, true); });
+$('pl-prev').addEventListener('click', ()=>plLoad(plIdx-1, true));
+$('pl-next').addEventListener('click', ()=>plLoad(plIdx+1, true));
+$('pl-play').addEventListener('click', ()=>{ if(plCtrl) plCtrl.togglePlay(); });
+window.onSpotifyIframeApiReady=(API)=>{
+  API.createController($('spotify-embed'), {uri:'spotify:track:'+TRACKS[0].id, width:'100%', height:80}, (c)=>{
+    plCtrl=c;
+    c.addListener('playback_update', e=>{
+      const d=e.data||{}; plPaused=!!d.isPaused;
+      if(d.duration) $('pl-bar').style.width=Math.min(100,100*d.position/d.duration)+'%';
+      if(!d.isPaused && d.duration && d.position>=d.duration-600){ plLoad(plIdx+1, true); return; }
+      plShow();
+    });
+  });
+};
+(function(){ const s=document.createElement('script'); s.src='https://open.spotify.com/embed/iframe-api/v1'; s.async=true;
+  s.onerror=()=>{ $('spotify-embed').outerHTML='<iframe title="Spotify" src="https://open.spotify.com/embed/track/'+TRACKS[0].id+'" width="100%" height="80" frameborder="0" allow="autoplay; encrypted-media" loading="lazy" style="border:0;border-radius:10px"></iframe>'; };
+  document.body.appendChild(s); })();
+plShow();
 </script>
 </body>
 </html>
